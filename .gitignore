@@ -1,0 +1,51 @@
+# Python & Bytecode
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.env
+.venv/
+
+# Temporary Static Analysis & Tool Artifacts
+/tmp/*-codeql-db/
+*.sarif.cache
+.semgrep/
+.scannerwork/
+.sonar/
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary / Stale Test Artifacts in Case Folders
+cases/**/test.sarif
+cases/**/memory_trace.csv
+
+# Keep git tracking essential directories
+!.gitkeep

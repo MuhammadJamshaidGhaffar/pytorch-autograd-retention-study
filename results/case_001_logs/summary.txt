@@ -1,0 +1,18 @@
+============================================================
+          EXECUTION SUMMARY: case_001                     
+============================================================
+--- Empirical Memory Trace ---
+Vulnerable Allocated MB: Start = 74.262 -> End = 99.012 (Growth: +24.75)
+Fixed      Allocated MB: Start = 190.273 -> End = 199.023 (Growth: +8.75)
+
+--- Static Analysis Detection Matrix ---
+Tool Name          | vulnerable.py        | fixed.py            
+-------------------|----------------------|---------------------
+torch-preflight    | CLEAN (No issues)    | CLEAN (No issues)   
+TorchFix           | CLEAN (No issues)    | CLEAN (No issues)   
+Semgrep            | CLEAN (No issues)    | CLEAN (No issues)   
+CodeQL (Generic)   | CLEAN (No issues)    | CLEAN (No issues)   
+============================================================
+Raw logs, metrics, and SARIF files saved in:
+/home/jamshaid/work/temp/autograd-retention-study/results/case_001_logs
+============================================================

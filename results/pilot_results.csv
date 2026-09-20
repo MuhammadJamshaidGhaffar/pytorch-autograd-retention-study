@@ -1,0 +1,3 @@
+case_id,valid,torch_preflight,torchfix,codeql,sonar,semgrep,known_to_tool,defect_mechanism,notes
+C000,CONFIRMED,DETECTED,CLEAN,CLEAN,CLEAN,CLEAN,YES,direct_loop_append,Positive control: direct lexical loop append. Flagged by torch-preflight as documented.
+C001,CONFIRMED,CLEAN,CLEAN,CLEAN,CLEAN,CLEAN,NO,interprocedural_helper_escape,Helper call escape: loop calls record_metric() which appends to outer history. Missed by torch-preflight due to intraprocedural analysis boundary.

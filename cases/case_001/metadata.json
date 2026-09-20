@@ -1,0 +1,23 @@
+{
+  "case_id": "C001",
+  "case_name": "persistent_output_list_append_interprocedural",
+  "python_version": "3.12.3",
+  "pytorch_version": "2.4.0+cu121",
+  "cuda_version": "12.1",
+  "device": "cuda",
+  "iterations": 100,
+  "batch_size": 64,
+  "defect_type": "interprocedural_collection_append",
+  "potential_tensor_source": "out = model(batch)",
+  "source_file": "vulnerable.py",
+  "defective_line_span": [21, 21],
+  "defective_statement": "history.append(out)",
+  "repaired_file": "fixed.py",
+  "repaired_line_span": [21, 21],
+  "repaired_statement": "history.append(out.detach())",
+  "empirical_growth_mb": 99.00,
+  "fixed_growth_mb": 24.75,
+  "known_to_baseline_tool": false,
+  "classification": "CONFIRMED",
+  "notes": "Vulnerable variant accumulates 99MB over 100 iterations via autograd graph retention across helper function boundary; fixed variant remains bounded. All generic and PyTorch static baselines fail to detect due to interprocedural boundary."
+}
