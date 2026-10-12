@@ -1,0 +1,15 @@
+{
+  "command": [
+    "<tools-env>/bin/torch-preflight",
+    "check",
+    "--format",
+    "json",
+    "-j",
+    "1",
+    "cases/case_004/fixed.py"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 0.15701247425749898
+}

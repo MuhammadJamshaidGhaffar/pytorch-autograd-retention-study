@@ -1,0 +1,9 @@
+{
+  "commit": "0ebf62f42bf9b6127f98a2849bf0aa6ff19f678f",
+  "path": "ComplexLayers.py",
+  "retrieved_utc": "2026-10-12",
+  "original_sha256": {
+    "ComplexLayers.py": "38f88eedcc692df40ae16e2007b0429eb56b03bb794809b7b98deabce58c2622"
+  },
+  "source_url": "https://github.com/wavefrontshaping/pytorch-Complex-Layers/blob/0ebf62f42bf9b6127f98a2849bf0aa6ff19f678f/ComplexLayers.py"
+}

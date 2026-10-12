@@ -1,0 +1,16 @@
+{
+  "command": [
+    "codeql",
+    "database",
+    "create",
+    "<tmp>/autograd-codeql-neub1_ay/db",
+    "--language=python",
+    "--source-root",
+    "<tmp>/autograd-codeql-neub1_ay/src",
+    "--threads=2"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 1.6347410841844976
+}

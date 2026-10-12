@@ -1,0 +1,13 @@
+{
+  "seed": 43,
+  "iterations": 120,
+  "warmup": 5,
+  "device": "cuda",
+  "torch": "2.14.0+cu130",
+  "python": "3.12.3",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "elapsed_seconds": 2.3606872940436006,
+  "cleanup_graph_nodes": 0,
+  "released_by_cleanup_bytes": 4608
+}

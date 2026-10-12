@@ -1,0 +1,44 @@
+{
+  "case_id": "C005",
+  "case_name": "running_statistic_graph_chain",
+  "mechanism_cluster": "recursive_statistic",
+  "provenance_kind": "public_mechanism_reproducer",
+  "source_url": "https://discuss.pytorch.org/t/how-does-batchnorm-keeps-track-of-running-mean/40084/16",
+  "original_project_reproduced": false,
+  "adaptation": "Scalar EMA and small MLP replace complex-valued normalization; update dependency is preserved, but original training and covariance calculations are omitted.",
+  "known_to_tool_before_study": "UNKNOWN",
+  "classification": "CONFIRMED",
+  "source_file": "vulnerable.py",
+  "defective_line_span": [
+    13,
+    13
+  ],
+  "repaired_file": "fixed.py",
+  "repaired_line_span": [
+    13,
+    13
+  ],
+  "iterations": 80,
+  "warmup": 5,
+  "repetitions": 3,
+  "seed": 42,
+  "batch_size": 32,
+  "features": 128,
+  "autograd_use": "no backward",
+  "fixed_control": "detach at sink; output payload may still grow; graph-associated excess must be removed",
+  "pilot_role": "new_candidate",
+  "source_evidence": "Attached running statistics are diagnosed; posts 17 and 20 confirm no_grad/detach corrections.",
+  "classification_scope": "Runtime-confirmed in this small reproducer; original project not executed",
+  "python_version": "3.12.3",
+  "pytorch_version": "2.14.0+cu130",
+  "cuda_version": "13.0",
+  "device": "cuda",
+  "source_checked_on": "2026-10-12",
+  "potential_tensor_source_lines": [
+    19
+  ],
+  "related_sink_lines": [
+    13,
+    13
+  ]
+}

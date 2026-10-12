@@ -1,0 +1,43 @@
+{
+  "case_id": "R003",
+  "title": "Complex batch normalization statistics",
+  "source_url": "https://discuss.pytorch.org/t/how-does-batchnorm-keeps-track-of-running-mean/40084/16",
+  "adaptations": "Exact two affected classes from pinned source; independent conv training driver instead of MNIST. Fix wraps only running statistic updates in no_grad as forum recommends.",
+  "mechanism": "running statistics recurrence",
+  "full_application_reproduced": false,
+  "classification": "CONFIRMED",
+  "persistent_roots": "running mean and covariance",
+  "source_hashes": {
+    "vulnerable": "07163859fcc7060ac78144637459b317f7e27a591967c5ca097251676b9fb745",
+    "fixed": "c5feabf9af4ce3057e1f0ab2ae307fc936c5d9d9ea2e06b2a21067351a2901e2"
+  },
+  "dimensions": {
+    "flow_scope": "cross-method",
+    "sink": "self attribute",
+    "aliasing": "direct",
+    "lifetime": "object",
+    "accumulation": "bounded-payload-growing-graph",
+    "cleanup": "detach after run",
+    "autograd_use": "backward already run",
+    "control_flow": "branch"
+  },
+  "known_to_tool_before_study": "UNKNOWN",
+  "source_spans": {
+    "vulnerable": [
+      75,
+      88,
+      91,
+      94
+    ],
+    "fixed": [
+      75,
+      76,
+      89,
+      90,
+      93,
+      96
+    ]
+  },
+  "repair_diff": "fix.patch",
+  "upstream_license": "No license file in pinned historical tree; extracted research code is attributed, no license grant inferred."
+}

@@ -1,3 +1,8 @@
-case_id,valid,torch_preflight,torchfix,codeql,sonar,semgrep,known_to_tool,defect_mechanism,notes
-C000,CONFIRMED,DETECTED,CLEAN,CLEAN,CLEAN,CLEAN,YES,direct_loop_append,Positive control: direct lexical loop append. Flagged by torch-preflight as documented.
-C001,CONFIRMED,CLEAN,CLEAN,CLEAN,CLEAN,CLEAN,NO,interprocedural_helper_escape,Helper call escape: loop calls record_metric() which appends to outer history. Missed by torch-preflight due to intraprocedural analysis boundary.
+case_id,valid,provenance_kind,independent_real_defect,torch_preflight,torch_preflight_all,torchfix,semgrep,codeql,vulnerable_growth_mib,fixed_growth_mib,excess_graph_growth_mib
+C000,CONFIRMED,public_mechanism_reproducer,False,DETECTED,DETECTED,MISSED,MISSED,MISSED,7.4062,1.2344,6.1719
+C001,CONFIRMED,synthetic_variant,False,MISSED,MISSED,MISSED,MISSED,MISSED,7.4062,1.2344,6.1719
+C002,CONFIRMED,report_inspired_adaptation,False,MISSED,MISSED,MISSED,MISSED,MISSED,7.4448,0.0386,7.4062
+C003,CONFIRMED,synthetic_variant,False,DETECTED,DETECTED,MISSED,MISSED,MISSED,7.4062,1.2344,6.1719
+C004,CONFIRMED,report_inspired_adaptation,False,MISSED,MISSED,MISSED,MISSED,MISSED,6.1719,4.9375,1.2344
+C005,CONFIRMED,public_mechanism_reproducer,False,MISSED,MISSED,MISSED,MISSED,MISSED,6.1719,0.0,6.1719
+C006,CONFIRMED,report_inspired_adaptation,False,MISSED,MISSED,MISSED,MISSED,MISSED,7.4062,0.0,7.4062

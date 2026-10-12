@@ -1,0 +1,12 @@
+{
+  "benchmark/R001/vulnerable.py": "0da21b637c7a87f3dd68cce94feaa49c889f1a7417139f419382ce76985d6433",
+  "benchmark/R001/fixed.py": "829d4b19ad6149e3f96990486f76b9fefad067b02740bfd11daeed290470c543",
+  "benchmark/R002/vulnerable.py": "887d37d6bac0442652a9e92fe00a58fda30d798ad2940b02bcd81ac49e524344",
+  "benchmark/R002/fixed.py": "50d23a452b1fbef68d0217943cb2bd51940d0eec8d1fb7655b0607dee600c70c",
+  "benchmark/R003/vulnerable.py": "07163859fcc7060ac78144637459b317f7e27a591967c5ca097251676b9fb745",
+  "benchmark/R003/fixed.py": "c5feabf9af4ce3057e1f0ab2ae307fc936c5d9d9ea2e06b2a21067351a2901e2",
+  "benchmark/R004/vulnerable.py": "ef34aabb81d6ebf76ffcfc23fece3b182bcf089b8a02eb4492e75906497b0b1e",
+  "benchmark/R004/fixed.py": "6e9a18a45b4751ddbd3bec3809b9042f22c93e8c1e9638272a29bee79f85f9f8",
+  "benchmark/R005/vulnerable.py": "799caf51a82661a44b3c70a8033350036e288db1178221171338142c655bc845",
+  "benchmark/R005/fixed.py": "0d53241a4f3d4ca44e9b80d6c346e743ab2daf3508a10a9e6c21121aad655252"
+}

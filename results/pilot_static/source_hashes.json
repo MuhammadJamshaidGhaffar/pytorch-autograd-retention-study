@@ -1,0 +1,16 @@
+{
+  "cases/case_000/vulnerable.py": "cc3173af71a721526cf35daa34ffa35e90aeb70e7f95d53025d39d17b3b4fced",
+  "cases/case_000/fixed.py": "905d6187ac690bea3bc52ce58824e9bcf3071f4ba259801284a93d1a30f1d512",
+  "cases/case_001/vulnerable.py": "94181b260c9d260cd8e9ac5a971dabcc3164e349a9ec28f921f752b5616e2dfc",
+  "cases/case_001/fixed.py": "0d765f68f34bbe9a89a69c8fa9107e5fb4270e94e724a80a6c76dae017cc6fcc",
+  "cases/case_002/vulnerable.py": "ecc056c3087fe7769d431f5397998f60100e1c9cf43c319e0e666e25b38a7a2a",
+  "cases/case_002/fixed.py": "e0837874b59b68e456be6a51848b5960ce07b29cb435d3a6da61c081c450726e",
+  "cases/case_003/vulnerable.py": "e63d23d12a4fd32666aa5eb4ce4e67d078f708cb68c229e92054b092d4263a9d",
+  "cases/case_003/fixed.py": "4bdfe0fd293cb1bc69eab90fbec1f0446bebe926a92a3493c360863ab59ab52c",
+  "cases/case_004/vulnerable.py": "390bb62946c3d3986e1fe9b863cfb641110a902d7d26a5515aae9cff6ba4010d",
+  "cases/case_004/fixed.py": "3f0f104f910ee6f78dde2c73d0503743d259d6397619ddd94eb20798116eaaaa",
+  "cases/case_005/vulnerable.py": "07afa90849ecd5e0e6b66de946e10daadcf76bbaf899c79fae271e36e0b1632f",
+  "cases/case_005/fixed.py": "769e942a1f8ec6d43c92906f47f67fbf1c337f52c7ebaf69799a3434cdd0ac4f",
+  "cases/case_006/vulnerable.py": "7d0e59a9b970e35ec53e7f388909fc8c3db088c881edf3654d204ee41642b5a2",
+  "cases/case_006/fixed.py": "4e24c5995c8fc25bf72435b0d78e270616e524b0a4f819ef3003b2ad0749b0ef"
+}

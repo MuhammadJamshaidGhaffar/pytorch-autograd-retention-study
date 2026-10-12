@@ -1,0 +1,37 @@
+[
+  {
+    "case_id": "R001",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs and gradients where training; final parameters; R005 terminal window gradient"
+  },
+  {
+    "case_id": "R002",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs and gradients where training; final parameters; R005 terminal window gradient"
+  },
+  {
+    "case_id": "R003",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs and gradients where training; final parameters; R005 terminal window gradient"
+  },
+  {
+    "case_id": "R004",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs and gradients where training; final parameters; R005 terminal window gradient"
+  },
+  {
+    "case_id": "R005",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs and gradients where training; final parameters; R005 terminal window gradient"
+  }
+]

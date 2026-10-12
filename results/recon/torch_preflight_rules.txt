@@ -1,0 +1,24 @@
+TG001  error   Tensor stored with its autograd graph still attached  
+(CRITICAL_OOM)
+TG002  error   Evaluation runs a model without torch.no_grad()/inference_mode() 
+(CRITICAL_OOM)
+TG003  error   backward() in a loop without a matching zero_grad()  
+(CONVERGENCE_BUG)
+TG004  note    DataLoader configured to stall a CUDA device  (PERFORMANCE_WARN)
+TG005  error   Softmax applied before a loss that expects raw logits  
+(CONVERGENCE_BUG)
+TG006  error   Binary cross-entropy paired with the wrong activation  
+(CONVERGENCE_BUG)
+TG007  warning GPU synchronisation inside a loop nested in the training step  
+(PERFORMANCE_WARN)
+TG008  warning Training run with unseeded randomness  (CONVERGENCE_BUG)
+TG010  error   Projected peak VRAM exceeds the configured target GPU  
+(CRITICAL_OOM)
+TG011  error   eval() in an epoch loop with no matching train()  
+(CONVERGENCE_BUG)
+TG012  error   DataLoader under DDP without a DistributedSampler  
+(CONVERGENCE_BUG)
+TG013  warning Host-to-device transfer repeated every iteration  
+(PERFORMANCE_WARN)
+TG014  error   Gradient accumulation without dividing the loss  
+(CONVERGENCE_BUG)

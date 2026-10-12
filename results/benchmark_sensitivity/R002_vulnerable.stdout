@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "summary": {
+    "files_checked": 1,
+    "errors": 0,
+    "warnings": 0,
+    "notes": 1,
+    "fixed": 0
+  },
+  "diagnostics": [
+    {
+      "code": "TG008",
+      "message": "This training run draws from torch with no seed set, so it cannot be reproduced and a change in results cannot be attributed to a change in the code.",
+      "severity": "note",
+      "category": "CONVERGENCE_BUG",
+      "path": "results/benchmark_sensitivity/R002_vulnerable.py",
+      "line": 86,
+      "column": 24,
+      "end_line": 86,
+      "end_column": 62,
+      "hint": "Call `torch.manual_seed(...)` at startup, or one helper that covers every generator (`seed_everything(seed)` / `set_seed(seed)`).",
+      "fixable": false,
+      "fix": null
+    }
+  ],
+  "failures": []
+}

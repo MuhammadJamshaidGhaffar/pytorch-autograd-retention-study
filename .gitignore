@@ -29,7 +29,6 @@ ENV/
 .venv/
 
 # Temporary Static Analysis & Tool Artifacts
-/tmp/*-codeql-db/
 *.sarif.cache
 .semgrep/
 .scannerwork/
@@ -49,3 +48,38 @@ cases/**/memory_trace.csv
 
 # Keep git tracking essential directories
 !.gitkeep
+# Local tools, downloaded distributions, scanner databases, and credentials
+.tools/
+.artifacts/
+.env.*
+!.env.example
+*.token
+*.pem
+*.key
+**/codeql-db*/
+**/.scannerwork/
+**/.sonar/
+**/.pytest_cache/
+.coverage
+htmlcov/
+# Bulky, regenerable diagnostics stay local, including compressed snapshots.
+*.pickle
+*.pickle.*
+*.pkl
+*.pkl.*
+results/pilot_diagnostics/**/*_profiler.json
+results/pilot_diagnostics/**/*_profiler.json.*
+# Generated static-sensitivity source copies; generator and scan evidence are kept.
+results/benchmark_sensitivity/*.py
+# Removed historical archive must not be accidentally re-added.
+results/legacy_*/
+# Model/checkpoint artifacts are not benchmark source or measurements.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Local reproduction environments and benchmark scratch products
+.venv-*/
+benchmark/**/memory_trace.csv
+benchmark/**/test.sarif

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "summary": {
+    "files_checked": 1,
+    "errors": 1,
+    "warnings": 0,
+    "notes": 0,
+    "fixed": 0
+  },
+  "diagnostics": [
+    {
+      "code": "TG001",
+      "message": "`all_scores[...] = ...` keeps a tensor attached to the autograd graph and nothing backwards it, so every activation on the way to it stays in VRAM \u2014 one full graph per iteration, until the run OOMs.",
+      "severity": "error",
+      "category": "CRITICAL_OOM",
+      "path": "results/benchmark_sensitivity/R001_vulnerable.py",
+      "line": 12,
+      "column": 25,
+      "end_line": 12,
+      "end_column": 31,
+      "hint": "Store `.item()` or `.detach()` instead.",
+      "fixable": true,
+      "fix": "add .detach()"
+    }
+  ],
+  "failures": []
+}

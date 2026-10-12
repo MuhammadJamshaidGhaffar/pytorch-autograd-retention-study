@@ -1,0 +1,44 @@
+{
+  "case_id": "C004",
+  "case_name": "forward_hook_feature_cache",
+  "mechanism_cluster": "hook_cache",
+  "provenance_kind": "report_inspired_adaptation",
+  "source_url": "https://discuss.pytorch.org/t/pytorch-memory-leak-feature-extraction-with-forward-hook/171667",
+  "original_project_reproduced": false,
+  "adaptation": "Our hook runs with gradient tracking and persists features across batches. The report also contains no_grad, frozen parameters and hook-lifecycle issues; those are not reproduced here.",
+  "known_to_tool_before_study": "UNKNOWN",
+  "classification": "CONFIRMED",
+  "source_file": "vulnerable.py",
+  "defective_line_span": [
+    12,
+    12
+  ],
+  "repaired_file": "fixed.py",
+  "repaired_line_span": [
+    12,
+    12
+  ],
+  "iterations": 80,
+  "warmup": 5,
+  "repetitions": 3,
+  "seed": 42,
+  "batch_size": 32,
+  "features": 128,
+  "autograd_use": "no backward",
+  "fixed_control": "detach at sink; output payload may still grow; graph-associated excess must be removed",
+  "pilot_role": "new_candidate",
+  "source_evidence": "Developer reports feature-extraction/hook memory growth; discussion addresses ineffective detach and retained graphs.",
+  "classification_scope": "Runtime-confirmed in this small reproducer; original project not executed",
+  "python_version": "3.12.3",
+  "pytorch_version": "2.14.0+cu130",
+  "cuda_version": "13.0",
+  "device": "cuda",
+  "source_checked_on": "2026-10-12",
+  "potential_tensor_source_lines": [
+    17
+  ],
+  "related_sink_lines": [
+    12,
+    12
+  ]
+}

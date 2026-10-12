@@ -1,0 +1,5 @@
+case_id,flow_scope,sink,aliasing,lifetime,accumulation,cleanup,autograd_use,control_flow,evidence_scope,novelty,interpretation
+R002,cross-method,nested container,nested,object,grow,explicit reset after run,backward already run,loop,source-grounded reduction,NOT_ESTABLISHED,Meter update crosses methods; the running total retains prior loss graphs after backward.
+R003,cross-method,self attribute,direct,object,bounded-payload-growing-graph,detach after run,backward already run,branch,source-grounded reduction,NOT_ESTABLISHED,Running mean/covariance updates recursively retain graph history across forwards.
+R004,cross-method,framework state,aliased,object,bounded-payload-growing-graph,detach after run,backward already run,loop,source-grounded reduction,NOT_ESTABLISHED,In-place copying preserves obsolete buffer graph history despite bounded payload.
+R005,local,outer collection,aliased,application,bounded-payload-growing-graph,explicit after run,deferred,loop,source-grounded reduction,NOT_ESTABLISHED,Slicing bounds tensor payload but concatenation retains ancestry of discarded elements.

@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-12",
+  "requested_by": "user",
+  "change": "Remove SonarQube from active pilot; focus on torch-preflight, TorchFix, CodeQL, Semgrep",
+  "historical_manifest": "results/legacy_20260920/tools_manifest.csv",
+  "reason": "User scope instruction; not a detection result"
+}

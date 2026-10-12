@@ -1,0 +1,14 @@
+{
+  "command": [
+    "<tools-env>/bin/torchfix",
+    "--select",
+    "ALL",
+    "-j",
+    "1",
+    "cases/case_003/fixed.py"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 0.26336185028776526
+}

@@ -1,0 +1,45 @@
+{
+  "case_id": "C002",
+  "case_name": "cross_method_metric_logger",
+  "mechanism_cluster": "list_append",
+  "provenance_kind": "report_inspired_adaptation",
+  "source_url": "https://github.com/Megvii-BaseDetection/YOLOX/issues/103",
+  "original_project_reproduced": false,
+  "adaptation": "A small logger with an unbounded list replaces YOLOX MeterBuffer/AverageMeter. No optimizer or backward is executed. This is not a faithful reproduction of the original training bug.",
+  "known_to_tool_before_study": "UNKNOWN",
+  "classification": "CONFIRMED",
+  "source_file": "vulnerable.py",
+  "defective_line_span": [
+    13,
+    13
+  ],
+  "repaired_file": "fixed.py",
+  "repaired_line_span": [
+    13,
+    13
+  ],
+  "iterations": 80,
+  "warmup": 5,
+  "repetitions": 3,
+  "seed": 42,
+  "batch_size": 32,
+  "features": 128,
+  "autograd_use": "no backward",
+  "fixed_control": "detach at sink; output payload may still grow; graph-associated excess must be removed",
+  "pilot_role": "new_candidate",
+  "source_evidence": "YOLOX maintainers identify logging attached loss tensors among memory issues; commit d894530 adds detach before meter updates.",
+  "classification_scope": "Runtime-confirmed in this small reproducer; original project not executed",
+  "python_version": "3.12.3",
+  "pytorch_version": "2.14.0+cu130",
+  "cuda_version": "13.0",
+  "device": "cuda",
+  "source_checked_on": "2026-10-12",
+  "fix_commit_url": "https://github.com/Megvii-BaseDetection/YOLOX/commit/d89453018099062ad0a15d6df2db9a3c65fd3a1a",
+  "potential_tensor_source_lines": [
+    19
+  ],
+  "related_sink_lines": [
+    13,
+    13
+  ]
+}

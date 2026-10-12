@@ -1,0 +1,33 @@
+[2026-10-12 16:43:54] [build-stderr] /bin/sh: 1: python2: not found
+[2026-10-12 16:43:54] [build-stdout] No directories containing root identifiers were found. Returning working directory as root.
+[2026-10-12 16:43:54] [build-stdout] Will try to guess Python version, as it was not specified in `lgtm.yml`
+[2026-10-12 16:43:54] [build-stdout] Trying to guess Python version based on Trove classifiers in setup.py
+[2026-10-12 16:43:54] [build-stdout] Did not find setup.py (expected it to be at <tmp>/autograd-codeql-4gqrih20/src/setup.py)
+[2026-10-12 16:43:54] [build-stdout] Trying to guess Python version based on travis file
+[2026-10-12 16:43:54] [build-stdout] Did not find any travis files (expected them at either ['<tmp>/autograd-codeql-4gqrih20/src/.travis.yml', '<tmp>/autograd-codeql-4gqrih20/src/travis.yml'])
+[2026-10-12 16:43:54] [build-stdout] Trying to guess Python version based on installed versions
+[2026-10-12 16:43:54] [build-stdout] Wanted to run Python 2, but it is not available. Using Python 3 instead
+[2026-10-12 16:43:54] [build-stdout] This script is running Python 3, but Python 2 is also available (as 'python3')
+[2026-10-12 16:43:54] [build-stdout] Could not guess Python version, will use default: Python 3
+[2026-10-12 16:43:54] [build-stdout] Calling python3 -S <home>/.local/opt/codeql/python/tools/python_tracer.py --verbosity 3 -z all -c <tmp>/autograd-codeql-4gqrih20/db/working/trap_cache -R <tmp>/autograd-codeql-4gqrih20/src
+[2026-10-12 16:43:55] [build-stdout] INFO: The Python extractor has recently stopped extracting the standard library by default. If you encounter problems, please let us know by submitting an issue to https://github.com/github/codeql. It is possible to re-enable extraction of the standard library by setting the environment variable CODEQL_EXTRACTOR_PYTHON_EXTRACT_STDLIB.
+[2026-10-12 16:43:55] [build-stdout] [INFO] Extraction will use the Python 3 standard library.
+[2026-10-12 16:43:55] [build-stdout] [INFO] sys_path is: ['<home>/.local/opt/codeql/python/tools', '<usr>/lib/python312.zip', '<usr>/lib/python3.12', '<usr>/lib/python3.12/lib-dynload']
+[2026-10-12 16:43:55] [build-stdout] [INFO] Python version 3.12.3
+[2026-10-12 16:43:55] [build-stdout] [INFO] Python extractor version 7.1.9
+[2026-10-12 16:43:55] [build-stdout] [INFO] [14] Extracted folder <tmp>/autograd-codeql-4gqrih20/src/case_000 in 1ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [12] Extracted folder <tmp>/autograd-codeql-4gqrih20/src/case_001 in 1ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [1] Extracted folder <tmp>/autograd-codeql-4gqrih20/src/case_002 in 1ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [4] Extracted folder <tmp>/autograd-codeql-4gqrih20/src/case_005 in 1ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [3] Extracted folder <tmp>/autograd-codeql-4gqrih20/src/case_006 in 1ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [6] Extracted folder <tmp>/autograd-codeql-4gqrih20/src/case_003 in 1ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [7] Extracted folder <tmp>/autograd-codeql-4gqrih20/src/case_004 in 1ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [13] Extracted file <tmp>/autograd-codeql-4gqrih20/src/case_000/vulnerable.py in 7ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [10] Extracted file <tmp>/autograd-codeql-4gqrih20/src/case_001/vulnerable.py in 8ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [12] Extracted file <tmp>/autograd-codeql-4gqrih20/src/case_006/vulnerable.py in 9ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [14] Extracted file <tmp>/autograd-codeql-4gqrih20/src/case_005/vulnerable.py in 9ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [5] Extracted file <tmp>/autograd-codeql-4gqrih20/src/case_003/vulnerable.py in 9ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [1] Extracted file <tmp>/autograd-codeql-4gqrih20/src/case_004/vulnerable.py in 10ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] [2] Extracted file <tmp>/autograd-codeql-4gqrih20/src/case_002/vulnerable.py in 11ms
+[2026-10-12 16:43:55] [build-stdout] [INFO] Processed 14 modules in 0.05s
+[2026-10-12 16:43:55] [build-stderr] Scanning for files in <tmp>/autograd-codeql-4gqrih20/src...

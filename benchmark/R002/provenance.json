@@ -1,0 +1,11 @@
+{
+  "before_commit": "5945f9ca98bd8c41b50f6d683732254886faf128",
+  "fixed_commit": "d89453018099062ad0a15d6df2db9a3c65fd3a1a",
+  "path": "yolox/utils/metric.py",
+  "retrieved_utc": "2026-10-12",
+  "original_sha256": {
+    "yolox_metric_before.py": "b4867e8416b93b4166f75a2e5ce7aae9f80de7e9318fdc9a68bd9ce346346715",
+    "yolox_metric_after.py": "95b4c66c43b7007a636072f75576bb6812eea372124e3304bd69c1798d3ae0d9"
+  },
+  "source_url": "https://github.com/Megvii-BaseDetection/YOLOX/commit/d89453018099062ad0a15d6df2db9a3c65fd3a1a"
+}

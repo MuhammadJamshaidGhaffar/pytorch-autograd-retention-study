@@ -1,103 +1,59 @@
+"""Verify the authoritative manifest; explicitly refresh versions without losing settings.
+
+Run with the baseline environment's Python. Normal execution never silently changes
+versions. --refresh preserves an archived copy and all reviewed configurations.
+"""
+import argparse
 import csv
+from datetime import datetime, timezone
 import importlib.metadata
-import os
+import json
+from pathlib import Path
+import shutil
 import subprocess
 
-def get_pkg_version(pkg_name):
-    """Retrieve installed version from python environment."""
+ROOT = Path(__file__).resolve().parent
+
+
+def observed_versions():
+    found = {}
+    for label, package in [('torch-preflight','torch-preflight'),('TorchFix','torchfix'),('Semgrep','semgrep')]:
+        try:
+            found[label] = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            found[label] = None
     try:
-        return importlib.metadata.version(pkg_name)
-    except importlib.metadata.PackageNotFoundError:
-        return "Not installed"
+        p=subprocess.run(['codeql','version','--format=json'],capture_output=True,text=True,check=True,timeout=15)
+        found['CodeQL']=json.loads(p.stdout)['version']
+    except (OSError,subprocess.SubprocessError,ValueError,KeyError):
+        found['CodeQL']=None
+    return found
 
-def get_cli_version(cmd):
-    """Retrieve CLI tool version string."""
-    try:
-        res = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=5)
-        if res.returncode == 0:
-            return res.stdout.strip().split("\n")[0]
-        return "Not installed in PATH"
-    except Exception:
-        return "Not available"
 
-def generate_manifest():
-    os.makedirs("results", exist_ok=True)
-    manifest_path = os.path.join("results", "tools_manifest.csv")
-    
-    # 1. Query installed tool versions dynamically
-    tp_version = get_pkg_version("torch-preflight")
-    tf_version = get_pkg_version("torchfix")
-    semgrep_version = get_pkg_version("semgrep")
-    if semgrep_version == "Not installed":
-        semgrep_version = get_cli_version("semgrep --version")
-    codeql_version = get_cli_version("codeql version --format=terse")
-    sonar_version = get_cli_version("sonar-scanner --version")
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--refresh',action='store_true');args=parser.parse_args()
+    path=ROOT/'results/tools_manifest.csv'
+    rows=list(csv.DictReader(path.open()))
+    found=observed_versions();changes=[];missing=[]
+    for row in rows:
+        actual=found.get(row['tool_name'])
+        if actual is None:missing.append(row['tool_name']);continue
+        if actual != row['detected_version']:
+            changes.append((row,actual))
+    for name in missing:print(f'UNAVAILABLE: {name}; manifest unchanged')
+    for row,actual in changes:print(f"MISMATCH: {row['tool_name']}: recorded={row['detected_version']}, installed={actual}")
+    if args.refresh and changes and not missing:
+        stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+        archive=ROOT/'results/manifest_history';archive.mkdir(exist_ok=True)
+        shutil.copy2(path,archive/f'tools_manifest_{stamp}.csv')
+        for row,actual in changes:
+            row['notes']+=f" Version changed from {row['detected_version']} to {actual} at {stamp}; rerun affected baselines."
+            row['detected_version']=actual
+            row['verified_on']=stamp[:8]
+        with path.open('w') as f:
+            w=csv.DictWriter(f,fieldnames=rows[0], lineterminator="\n");w.writeheader();w.writerows(rows)
+        print('Updated results/tools_manifest.csv; earlier evidence retains its version snapshot.')
+    elif not changes and not missing:print('All four installed baseline versions match results/tools_manifest.csv.')
+    if missing or (changes and not args.refresh):raise SystemExit(1)
 
-    # 2. Define protocol-mandated metadata
-    rows = [
-        {
-            "tool_name": "torch-preflight",
-            "detected_version": tp_version,
-            "role": "Principal Direct Baseline",
-            "repo_url": "https://github.com/highwaterlabs/torch-preflight",
-            "license": "Apache-2.0 / MIT",
-            "default_rules": "13 static rules + VRAM guard",
-            "status": "Active (Released Aug 2026)",
-            "notes": "Direct competitor; explicitly detects retained autograd graphs (e.g. append to outer list), loops, and detach/no_grad."
-        },
-        {
-            "tool_name": "TorchFix",
-            "detected_version": tf_version,
-            "role": "PyTorch Linter Baseline",
-            "repo_url": "https://github.com/pytorch-labs/torchfix",
-            "license": "BSD-3-Clause",
-            "default_rules": "TOR0XX, TOR1XX, TOR2XX enabled; TOR4XX disabled by default",
-            "status": "Archived (Jan 28 2026)",
-            "notes": "LibCST-based linter for PyTorch API deprecations; not primarily an autograd retention analyzer. Must run with all rules enabled."
-        },
-        {
-            "tool_name": "CodeQL",
-            "detected_version": codeql_version,
-            "role": "Generic Static Baseline & L0-L3 Engine",
-            "repo_url": "https://github.com/github/codeql",
-            "license": "MIT / GitHub Terms",
-            "default_rules": "python-queries / default-suite",
-            "status": "Active",
-            "notes": "Generic taint/data-flow baseline out-of-the-box. Also serves as the query framework for implementing proposed L0-L3 detectors."
-        },
-        {
-            "tool_name": "Semgrep",
-            "detected_version": semgrep_version,
-            "role": "Generic Rule/Pattern Baseline",
-            "repo_url": "https://github.com/semgrep/semgrep",
-            "license": "LGPL-2.1",
-            "default_rules": "p/default, p/python",
-            "status": "Active",
-            "notes": "Pattern-matching and local data-flow baseline; does not model dynamic PyTorch autograd graph lifetimes out-of-the-box."
-        },
-        {
-            "tool_name": "SonarQube",
-            "detected_version": sonar_version,
-            "role": "Industrial Static Baseline",
-            "repo_url": "https://github.com/SonarSource/sonarqube",
-            "license": "LGPL-3.0",
-            "default_rules": "Sonar Way (Python)",
-            "status": "Active",
-            "notes": "Generic bug/vulnerability analyzer; lacks framework-specific tensor graph reachability modeling."
-        }
-    ]
-
-    fieldnames = [
-        "tool_name", "detected_version", "role", "repo_url",
-        "license", "default_rules", "status", "notes"
-    ]
-
-    with open(manifest_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-    print(f"[+] Successfully generated: {manifest_path}")
-
-if __name__ == "__main__":
-    generate_manifest()
+if __name__=='__main__':main()

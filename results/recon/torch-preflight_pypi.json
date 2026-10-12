@@ -1,0 +1,133 @@
+{
+  "info": {
+    "author": "Himanshu Janbandhu",
+    "author_email": null,
+    "bugtrack_url": null,
+    "classifiers": [
+      "Development Status :: 3 - Alpha",
+      "Environment :: Console",
+      "Intended Audience :: Developers",
+      "Intended Audience :: Science/Research",
+      "License :: OSI Approved :: MIT License",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.10",
+      "Programming Language :: Python :: 3.11",
+      "Programming Language :: Python :: 3.12",
+      "Programming Language :: Python :: 3.13",
+      "Programming Language :: Python :: 3.9",
+      "Topic :: Software Development :: Quality Assurance"
+    ],
+    "description": "<p align=\"center\">\n  <img src=\"https://raw.githubusercontent.com/highwaterlabs/torch-preflight/main/assets/logo.svg\" width=\"88\" alt=\"torch-preflight logo\"/>\n</p>\n\n<h1 align=\"center\">torch-preflight</h1>\n\n<p align=\"center\"><b>The linter that understands autograd \u2014 and the VRAM estimator that\ntells you what will fit.</b></p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/highwaterlabs/torch-preflight/actions/workflows/ci.yml\"><img src=\"https://github.com/highwaterlabs/torch-preflight/actions/workflows/ci.yml/badge.svg\" alt=\"CI\"/></a>\n  <a href=\"https://pypi.org/project/torch-preflight/\"><img src=\"https://img.shields.io/pypi/v/torch-preflight\" alt=\"PyPI\"/></a>\n  <a href=\"https://pypi.org/project/torch-preflight/\"><img src=\"https://img.shields.io/pypi/pyversions/torch-preflight\" alt=\"Python versions\"/></a>\n  <a href=\"https://github.com/highwaterlabs/torch-preflight/blob/main/LICENSE\"><img src=\"https://img.shields.io/pypi/l/torch-preflight\" alt=\"License\"/></a>\n</p>\n\n<p align=\"center\">\n  <a href=\"https://github.com/highwaterlabs/torch-preflight/tree/main/docs\"><b>Docs</b></a> &middot;\n  <a href=\"https://github.com/highwaterlabs/torch-preflight/blob/main/docs/rules.md\"><b>Rules</b></a> &middot;\n  <a href=\"https://github.com/highwaterlabs/torch-preflight/blob/main/docs/vram-estimation.md\"><b>VRAM estimation</b></a> &middot;\n  <a href=\"https://github.com/highwaterlabs/torch-preflight/blob/main/docs/cli.md\"><b>CLI</b></a>\n</p>\n\nA static analyzer for PyTorch training code. It catches VRAM leaks and silent convergence\nbugs at commit time, projects peak memory for a training run or a serving deployment before\nyou rent the GPU, and can fail the run at step 0 instead of OOMing at step 400.\n\nNo GPU. No PyTorch. It never imports or executes your code.\n\n```console\n$ torch-preflight check train.py\n\ntrain.py\n  7:19  error   TG001 (CRITICAL_OOM)\n  `losses.append(...)` stores a tensor that is still attached to the autograd graph;\n  every iteration's graph is retained in VRAM.\n    7 \u2502     losses.append(loss)\n      \u2502                   ^^^^\n  help: Use `.item()` to keep just the scalar value, or `.detach()` to keep the tensor\n        without its graph.\n  fix:  add .detach() (run with --fix)\n\nFound 1 error in 1 file(s).\n```\n\n<p align=\"center\"><i>One line, one wasted GPU hour. Caught in milliseconds, before it runs.</i></p>\n\n- \ud83d\udd0d **13 rules for bugs `ruff` and `flake8` cannot see** \u2014 retained autograd graphs, missing\n  `zero_grad()`, unscaled gradient accumulation, DDP without a `DistributedSampler`, a model\n  stuck in `eval()` after validation, doubled softmax, unseeded runs, GPU sync in a hot loop\n- \ud83e\uddee **VRAM estimation that covers the whole job** \u2014 training, encoder-decoder, and\n  autoregressive **generation with the KV cache**, plus the change that would make it fit\n- \ud83d\udee1\ufe0f **`VRAMGuard`** \u2014 fails a run at step 0 rather than OOM at step 400, measuring your\n  model's real activation memory without allocating a byte\n- \ud83d\udee0\ufe0f **Autofixes** via concrete syntax tree rewrites, so formatting and comments survive untouched\n- \ud83d\udcca **Measured, not guessed** \u2014 every constant calibrated against real hardware, **3.7% mean\n  error** versus measured peaks\n- \ud83e\udd2b **Quiet on real code** \u2014 **20 findings across PyTorch's own 2,285 files**, roughly one per\n  hundred, every one read by hand\n- \u26a1 **No GPU and no PyTorch required** \u2014 pure static analysis over [LibCST](https://github.com/Instagram/LibCST); a CI job asserts torch is never imported\n- \ud83d\udc0d Python 3.9\u20133.13, `pyproject.toml` config, pre-commit hook, GitHub Action, SARIF output\n\n`ruff` and `flake8` understand Python. They don't understand autograd graphs, gradient\naccumulation, or what `num_workers=0` does to eight GPUs waiting on one CPU. torch-preflight\nis built for the bugs that only cost money once you're paying for a GPU.\n\n## Table of contents\n\n- [Getting started](#getting-started)\n- [The line that costs you a GPU hour](#the-line-that-costs-you-a-gpu-hour)\n- [Will this fit on the GPU I'm about to rent?](#will-this-fit-on-the-gpu-im-about-to-rent)\n  - [Serving, not just training](#serving-not-just-training)\n  - [Fail at step 0, not step 400](#fail-at-step-0-not-step-400)\n  - [It reads your config, not just your code](#it-reads-your-config-not-just-your-code)\n- [Why you can trust the numbers](#why-you-can-trust-the-numbers)\n- [Integrations](#integrations)\n- [Documentation](#documentation)\n- [What stays free](#what-stays-free)\n\n## Getting started\n\n```bash\npip install torch-preflight\n```\n\n```bash\ntorch-preflight check ./src/                        # lint a tree\ntorch-preflight check ./src/ --fix                  # apply the safe fixes\ntorch-preflight estimate train.py --gpu a100-80gb   # will this training run fit?\ntorch-preflight estimate --model llama-3-8b --gpu a100-80gb \\\n    --generate --batch-size 16 --max-context 8192   # will this deployment fit?\ntorch-preflight explain TG003                       # why a rule exists, and what it costs\n```\n\nThe base install has no heavy dependencies. `torch-preflight[hub]` adds Hugging Face\narchitecture lookup; `torch-preflight[vram]` adds exact meta-device profiling.\n\n## The line that costs you a GPU hour\n\n```python\nfor batch, targets in loader:\n    loss = criterion(model(batch), targets)\n    losses.append(loss)          # \u2190 nothing backwards this: every activation stays in VRAM\n```\n\nYou have written this. Everyone has. `loss` still carries its computational graph, so\nappending it retains every intermediate activation on the way to it \u2014 and the next step's,\nand the next. Memory climbs linearly until CUDA gives up, hours in.\n\n**Where most tools would stop, and get it wrong.** Move one line and the same code costs\nalmost nothing:\n\n```python\nfor batch, targets in loader:\n    loss = criterion(model(batch), targets)\n    loss.backward()              # frees the saved tensors as it traverses\n    losses.append(loss)          # \u2190 now retains graph *nodes*, not activations\n```\n\n`backward()` releases each node's saved tensors on its way through, so the second version\nholds host-side bookkeeping rather than VRAM. Measured on a 13\u00d7256 MLP\n([the harness is in the repo](https://github.com/highwaterlabs/torch-preflight/blob/main/tests/calibration/measure_retention.py)):\n**560 KiB of activations retained per iteration** in the first version, **0 KiB** in the\nsecond, with the same ~30 graph nodes held either way. Same one-line fix, two very different\nbugs \u2014 so torch-preflight reports the first as an error and the second as a warning, instead\nof claiming both will OOM your GPU.\n\n**Why this is hard:** `losses.append(x)` is only a bug when `x` carries a graph. torch-preflight\nruns a dataflow pass to find out, tracing values across assignments, arithmetic, tensor\nmethods and function scopes, and refusing to propagate through `.detach()`, `.item()` or\n`argmax`. So `losses.append(loss.item())` stays silent, and so does anything inside\n`torch.no_grad()`. It also tracks whether a backward pass still *needs* what you stored \u2014\npipeline-parallel schedules and chunked loss modules hold graphs on purpose, and telling them\nto `.detach()` would break the training run rather than speed it up. A linter that\npattern-matched on `.append(` would be unusable.\n\nSee [all 13 rules \u2192](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/rules.md)\n\n## Will this fit on the GPU I'm about to rent?\n\n```console\n$ torch-preflight estimate finetune.py --gpu a100-80gb\n\nModel      llama-2-7b  (arch-snapshot)   6.74 B params\nConfig     amp \u00b7 AdamW \u00b7 batch 4 \u00b7 seq 2048\nRead from  batch_size=finetune.py:9, optimizer=finetune.py:7, seq_len=finetune.py:13\n\n  weights            25.10 GiB  \u2588\u2588\u2588\n  gradients          25.10 GiB  \u2588\u2588\u2588\n  optimizer state    50.21 GiB  \u2588\u2588\u2588\u2588\u2588\u2588\n  autocast cache     12.55 GiB  \u2588\u2588\n  activations        67.42 GiB  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\n  CUDA context         135 MiB  \u2588\n  fragmentation      18.94 GiB  \u2588\u2588\n  \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n  projected peak    199.45 GiB   (179.51 GiB \u2013 219.40 GiB)\n\nTarget     NVIDIA A100 80GB (78.0 GiB usable)   \u2192   256% of capacity   \u2717 OOM\n\nWhat would make it fit:\n  \u2717  \u2212 35.36 GiB  \u2192  164.09 GiB   flash attention / SDPA\n       mathematically equivalent, removes the O(seq\u00b2) attention term\n  \u2717  \u2212 66.30 GiB  \u2192  133.15 GiB   gradient checkpointing\n       same result, roughly 30% slower\n  \u2717  \u2212 41.61 GiB  \u2192  157.84 GiB   8-bit AdamW (bitsandbytes)\n       quantised optimizer state, minimal quality impact\n  \u2717  \u2212112.56 GiB  \u2192   86.89 GiB   flash attention + checkpointing + 8-bit AdamW\n                                  + halve micro-batch\n       even stacked together these do not fit; this needs a larger GPU, more\n       devices, or a parameter-efficient method such as LoRA\n```\n\nA single 80GB A100 is the wrong tool for a full 7B fine-tune at sequence 2048. Better to\nlearn that now than after the instance is running.\n\nEvery field is **read out of your script** \u2014 model, batch size, sequence length, precision,\noptimizer, sharding \u2014 and the report says which line each came from, so you can check it.\nNothing is imported or executed. **41 architectures** ship built in, **23 GPUs** and\n**34 cloud instances** are known by name (`--gpu p4de.24xlarge` works), and anything else is\nmeasured exactly on PyTorch's meta device without allocating a byte.\n\nEvery other estimator stops at the number. The list of what to *change* is the part you\nactually wanted.\n\n### Serving, not just training\n\nGeneration is a different memory shape, and `--generate` models it:\n\n```console\n$ torch-preflight estimate --model llama-3-8b --gpu a100-80gb \\\n      --generate --batch-size 16 --max-context 8192 --dtype pure-bf16\n\nConfig     pure-bf16 \u00b7 batch 16 \u00b7 context 8192 \u00b7 generation (KV cache)\n\n  weights            14.96 GiB  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\n  activations           20 MiB  \u2588\n  KV cache           16.00 GiB  \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\n  ...\n  projected peak     32.68 GiB   (29.41 GiB \u2013 35.95 GiB)\n\nTarget     NVIDIA A100 80GB (78.0 GiB usable)   \u2192   42% of capacity   \u2713 FITS\n```\n\nThe KV cache is usually the term that decides the answer, and it is where grouped-query\nattention pays off: llama-3-8b's 8 KV heads against 32 query heads make its cache a quarter\nof the multi-head equivalent. Llama-2-7b, which has none, needs **64 GiB of cache against\n12.6 GiB of weights** at batch 32 and 4096 tokens.\n\nDecoding also collapses the activation term \u2014 one token attends against the cache, so the\nO(context\u00b2) attention matrix never materialises.\n\n### Fail at step 0, not step 400\n\n```python\nfrom torch_preflight import VRAMGuard\n\nwith VRAMGuard(model, optimizer=optimizer, batch_size=32, image_size=224):\n    train()\n```\n\nParameters, gradients and optimizer state come from the live model and are exact.\nActivations are **measured from your module**, by running one forward pass against\nmeta-device parameters \u2014 that allocates nothing, never touches your model, and costs\nmilliseconds. It raises only when the run cannot fit even at the optimistic end of the\ninterval; aborting a job on a guess would be worse than the OOM.\n\n### It reads your config, not just your code\n\nDeepSpeed ZeRO stage and CPU offload are parsed out of the JSON or dict your script points\nat \u2014 reading JSON is not executing code \u2014 so a ZeRO-3 run with `offload_optimizer` is\ncharged for what actually sits on the device. T5 and Whisper are modelled as\nencoder-decoders, with the cross-attention term a decoder-only formula cannot express.\n\nSee [VRAM estimation \u2192](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/vram-estimation.md)\n\n## Why you can trust the numbers\n\nMemory estimators are easy to write and easy to be quietly wrong about. So:\n\n|  |  |\n|---|---|\n| **Constants are measured** | Activation coefficients from `saved_tensors_hooks` on the meta device; allocator behaviour and CUDA context from a real GPU. Measurement showed the published Megatron constants are a midpoint of two regimes \u2014 models with dropout retain 3\u00d7 the attention tensors \u2014 so Llama-class models are charged the cheaper rate they actually pay. |\n| **Projections are checked** | **3.7% mean absolute error** against measured peaks for GPT-2, BERT, DistilBERT and ResNet-50 on a T4. Harness and fixtures in [`tests/calibration/`](https://github.com/highwaterlabs/torch-preflight/tree/main/tests/calibration/), so you can re-run them. |\n| **Gaps are stated, not papered over** | `offload_param` streams parameters in, so the resident set is smaller than the weights term \u2014 we have not measured it, so the report says the real peak is lower rather than inventing a fraction. Grouped-query attention does *not* reduce training activations (measured: `repeat_kv` materialises full-size K/V), so it is not modelled as if it did. |\n| **It refuses to guess** | An unrecognised model reports `UNKNOWN` and widens the interval rather than inventing a parameter count. Verdicts are bands with an error range, never a fabricated \"95% risk\" score. |\n| **It stays quiet** | **20 findings across PyTorch's own 2,285 files** \u2014 about one per hundred \u2014 every one read by hand. Triage is also where most of our own bugs come from: three findings we had filed as \"intentional, so suppress it\" turned out to be the rule misunderstanding deferred backward, and a scan of seven training repos found nine more. Each is now regression-tested against the file that exposed it. |\n\n**435 tests.** A typical project lints in well under a second; PyTorch's entire 2,285-file\nsource tree takes about four minutes with all 13 rules.\n\n## Integrations\n\n```yaml\n# .pre-commit-config.yaml\nrepos:\n  - repo: https://github.com/highwaterlabs/torch-preflight\n    rev: v0.5.0\n    hooks:\n      - id: torch-preflight\n```\n\n```yaml\n# .github/workflows/lint.yml\n- uses: highwaterlabs/torch-preflight@v0\n  with:\n    paths: src/\n    format: github      # inline PR annotations\n```\n\nSARIF output feeds GitHub code scanning; JSON feeds everything else. Set `target_gpu` in\n`pyproject.toml` and CI fails on a projected OOM before the job is ever submitted.\n\nBy default the build fails on **errors** \u2014 wrong results and OOM. If the repository's product\n*is* training runs, add `fail-on: warning` to catch the smaller defects too: retained graphs\nwhose backward has already run, per-element device syncs, unseeded runs. Tuning observations\nlike `num_workers=0` are notes and never fail a build, which is what keeps that setting\nusable. See [RFC 0003](design/rfcs/0003-severity-and-ci-gating.md).\n\nSee [CI integration \u2192](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/ci.md)\n\n## Documentation\n\n| | |\n|---|---|\n| [Rules](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/rules.md) | All 13 rules, and the false positives deliberately suppressed |\n| [VRAM estimation](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/vram-estimation.md) | Custom architectures, CI gating, `VRAMGuard`, accuracy |\n| [CLI reference](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/cli.md) | Commands, flags, exit codes, autofixes |\n| [Configuration](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/configuration.md) | `pyproject.toml` and inline suppression |\n| [CI integration](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/ci.md) | GitHub Action, pre-commit, SARIF |\n| [Architecture](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/architecture.md) | How the analysis pipeline works |\n| [Development](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/development.md) | Tests, adding a rule, roadmap |\n\nDesign notes live in [`design/`](https://github.com/highwaterlabs/torch-preflight/tree/main/design/), including the\n[RFC](https://github.com/highwaterlabs/torch-preflight/blob/main/design/rfcs/0001-vram-estimator.md) behind the estimator and the\n[spike](https://github.com/highwaterlabs/torch-preflight/blob/main/design/spikes/0001-meta-device-activation-capture.md) the cost model rests on.\n\n## What stays free\n\nMIT licensed. These are commitments, not just current state:\n\n- **Every rule that has ever shipped free stays free.**\n- **The estimator, the remediation solver and `VRAMGuard` stay complete** \u2014 not a demo tier.\n- **The rule API stays open**, so anyone can write and ship their own rules.\n- **The calibration method and data stay public and reproducible.** Numbers are only worth\n  trusting if you can check them.\n\nA hosted service may come later for things that genuinely need a server or a team.\nNothing above is part of that.\n\n## Contributing\n\nIssues and pull requests are welcome. Adding a rule is one file plus a `@register`\ndecorator \u2014 see [development](https://github.com/highwaterlabs/torch-preflight/blob/main/docs/development.md) for the walkthrough and the test\nconventions.\n\n## License\n\nMIT \u2014 see [LICENSE](https://github.com/highwaterlabs/torch-preflight/blob/main/LICENSE).\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": null,
+    "downloads": {
+      "last_day": -1,
+      "last_month": -1,
+      "last_week": -1
+    },
+    "dynamic": null,
+    "home_page": null,
+    "keywords": "cuda, libcst, linter, machine-learning, pytorch, static-analysis, vram",
+    "license": "MIT",
+    "license_expression": null,
+    "license_files": [
+      "LICENSE"
+    ],
+    "maintainer": null,
+    "maintainer_email": null,
+    "name": "torch-preflight",
+    "package_url": "https://pypi.org/project/torch-preflight/",
+    "platform": null,
+    "project_url": "https://pypi.org/project/torch-preflight/",
+    "project_urls": {
+      "Changelog": "https://github.com/highwaterlabs/torch-preflight/blob/main/CHANGELOG.md",
+      "Documentation": "https://github.com/highwaterlabs/torch-preflight/tree/main/docs",
+      "Homepage": "https://github.com/highwaterlabs/torch-preflight",
+      "Issues": "https://github.com/highwaterlabs/torch-preflight/issues",
+      "Source": "https://github.com/highwaterlabs/torch-preflight"
+    },
+    "provides_extra": [
+      "all",
+      "dev",
+      "hub",
+      "vram"
+    ],
+    "release_url": "https://pypi.org/project/torch-preflight/0.5.0/",
+    "requires_dist": [
+      "libcst>=1.1",
+      "rich>=13.0",
+      "tomli>=2.0; python_version < \"3.11\"",
+      "huggingface-hub>=0.20; extra == \"all\"",
+      "torch>=2.1; extra == \"all\"",
+      "pytest-cov; extra == \"dev\"",
+      "pytest>=7.0; extra == \"dev\"",
+      "huggingface-hub>=0.20; extra == \"hub\"",
+      "torch>=2.1; extra == \"vram\""
+    ],
+    "requires_python": ">=3.9",
+    "summary": "Static analyzer for PyTorch training code: catches VRAM leaks, silent convergence bugs, and GPU pipeline stalls before you pay for the run.",
+    "version": "0.5.0",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 40320124,
+  "ownership": {
+    "organization": null,
+    "roles": [
+      {
+        "role": "Owner",
+        "user": "hv_janbandhu"
+      }
+    ]
+  },
+  "urls": [
+    {
+      "comment_text": null,
+      "core-metadata": {
+        "sha256": "f01bed18be13840886072fd8ada43e9fb30b186fc235737d1260a7cb3d745f62"
+      },
+      "digests": {
+        "blake2b_256": "8dff1748473a1ad84f13f11148596628c6f059dba588b2b645c265407576d37a",
+        "md5": "919bef280044470e8e2e1c588557dd02",
+        "sha256": "1d4475a02676877e81943e20be27b63e4ee13b3aa4893cd789922c0ea2c06464"
+      },
+      "downloads": -1,
+      "filename": "torch_preflight-0.5.0-py3-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "919bef280044470e8e2e1c588557dd02",
+      "packagetype": "bdist_wheel",
+      "python_version": "py3",
+      "requires_python": ">=3.9",
+      "size": 143815,
+      "upload_time": "2026-08-24T04:43:17",
+      "upload_time_iso_8601": "2026-08-24T04:43:17.332289Z",
+      "url": "https://files.pythonhosted.org/packages/8d/ff/1748473a1ad84f13f11148596628c6f059dba588b2b645c265407576d37a/torch_preflight-0.5.0-py3-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "comment_text": null,
+      "core-metadata": false,
+      "digests": {
+        "blake2b_256": "abda1432ef802ec55284f6a4527dbcfb610d176d40efb95470a59318b4348e1f",
+        "md5": "d92bd3a377220dbcc9da647644ffd11c",
+        "sha256": "90d0757a701fbc4dc60f05b0872d609d85c16788e0c05050f085df57afae5601"
+      },
+      "downloads": -1,
+      "filename": "torch_preflight-0.5.0.tar.gz",
+      "has_sig": false,
+      "md5_digest": "d92bd3a377220dbcc9da647644ffd11c",
+      "packagetype": "sdist",
+      "python_version": "source",
+      "requires_python": ">=3.9",
+      "size": 267072,
+      "upload_time": "2026-08-24T04:43:18",
+      "upload_time_iso_8601": "2026-08-24T04:43:18.676670Z",
+      "url": "https://files.pythonhosted.org/packages/ab/da/1432ef802ec55284f6a4527dbcfb610d176d40efb95470a59318b4348e1f/torch_preflight-0.5.0.tar.gz",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ],
+  "vulnerabilities": []
+}

@@ -1,0 +1,11 @@
+--- vulnerable.py
++++ fixed.py
+@@ -9,7 +9,7 @@
+     for i in range(iterations):
+         x = torch.randn(1, 128, device=c['device'])
+         scores = model(x).reshape(1, 10, 100).softmax(-1)
+-        all_scores[i] = scores
++        all_scores[i] = scores.detach().cpu().numpy()
+         yield scores.detach().cpu()
+ def roots(c):
+     return c['scores']

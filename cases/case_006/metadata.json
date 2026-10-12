@@ -1,0 +1,44 @@
+{
+  "case_id": "C006",
+  "case_name": "recurrent_state_graph_chain",
+  "mechanism_cluster": "recursive_hidden_state",
+  "provenance_kind": "report_inspired_adaptation",
+  "source_url": "https://discuss.pytorch.org/t/convolutional-lstm-retain-graph-error/85200",
+  "original_project_reproduced": false,
+  "adaptation": "Tanh recurrence replaces ConvLSTM and old-prediction tuple; no backward/optimizer is used. Fix is valid for inference or a deliberate truncation boundary, not full backpropagation through time.",
+  "known_to_tool_before_study": "UNKNOWN",
+  "classification": "CONFIRMED",
+  "source_file": "vulnerable.py",
+  "defective_line_span": [
+    14,
+    14
+  ],
+  "repaired_file": "fixed.py",
+  "repaired_line_span": [
+    14,
+    14
+  ],
+  "iterations": 80,
+  "warmup": 5,
+  "repetitions": 3,
+  "seed": 42,
+  "batch_size": 32,
+  "features": 128,
+  "autograd_use": "no backward",
+  "fixed_control": "detach at sink; output payload may still grow; graph-associated excess must be removed",
+  "pilot_role": "new_candidate",
+  "source_evidence": "Recurrent hidden/prediction history connects successive graphs. Reporter confirms detaching old predictions resolves the issue.",
+  "classification_scope": "Runtime-confirmed in this small reproducer; original project not executed",
+  "python_version": "3.12.3",
+  "pytorch_version": "2.14.0+cu130",
+  "cuda_version": "13.0",
+  "device": "cuda",
+  "source_checked_on": "2026-10-12",
+  "potential_tensor_source_lines": [
+    20
+  ],
+  "related_sink_lines": [
+    14,
+    14
+  ]
+}

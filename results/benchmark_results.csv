@@ -1,0 +1,6 @@
+case_id,classification,source_url,mechanism,full_application_reproduced,vulnerable_graph_40,vulnerable_graph_120,fixed_graph_120,median_vulnerable_allocated_growth_bytes,median_fixed_allocated_growth_bytes,numerical_validation
+R001,CONFIRMED,https://discuss.pytorch.org/t/memory-leak-when-appending-tensors-to-a-list/25937,diagnostic indexed storage,False,162,482,0,368640,0,PASS
+R002,CONFIRMED,https://github.com/Megvii-BaseDetection/YOLOX/issues/103,meter total recurrence,False,202,602,0,0,0,PASS
+R003,CONFIRMED,https://discuss.pytorch.org/t/how-does-batchnorm-keeps-track-of-running-mean/40084/16,running statistics recurrence,False,1879,5639,0,0,0,PASS
+R004,CONFIRMED,https://discuss.pytorch.org/t/copy-operations-get-repeated-in-autograd-computation-graph/122547,in-place buffer history,False,41,121,2,0,0,PASS
+R005,CONFIRMED,https://discuss.pytorch.org/t/how-to-prevent-this-memory-leak/47581,bounded window graph ancestry,False,243,723,22,40960,0,PASS

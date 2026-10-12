@@ -1,23 +1,44 @@
 {
-  "case_id": "C001",
-  "case_name": "persistent_output_list_append_interprocedural",
-  "python_version": "3.12.3",
-  "pytorch_version": "2.4.0+cu121",
-  "cuda_version": "12.1",
-  "device": "cuda",
-  "iterations": 100,
-  "batch_size": 64,
-  "defect_type": "interprocedural_collection_append",
-  "potential_tensor_source": "out = model(batch)",
-  "source_file": "vulnerable.py",
-  "defective_line_span": [24, 24],
-  "defective_statement": "history.append(out)",
-  "repaired_file": "fixed.py",
-  "repaired_line_span": [24, 24],
-  "repaired_statement": "history.append(out.detach())",
-  "empirical_growth_mb": 99.00,
-  "fixed_growth_mb": 24.75,
-  "known_to_baseline_tool": true,
+  "case_id": "C000",
+  "case_name": "direct_output_list",
+  "mechanism_cluster": "list_append",
+  "provenance_kind": "public_mechanism_reproducer",
+  "source_url": "https://discuss.pytorch.org/t/memory-leak-when-appending-tensors-to-a-list/25937",
+  "original_project_reproduced": false,
+  "adaptation": "Deterministic small MLP, fixed workload and explicit measurement replace the original model.",
+  "known_to_tool_before_study": "YES_MECHANISM",
   "classification": "CONFIRMED",
-  "notes": "Vulnerable variant accumulates 99MB over 100 iterations via autograd graph retention across helper function boundary; fixed variant remains bounded. All generic and PyTorch static baselines fail to detect due to interprocedural boundary."
+  "source_file": "vulnerable.py",
+  "defective_line_span": [
+    12,
+    12
+  ],
+  "repaired_file": "fixed.py",
+  "repaired_line_span": [
+    12,
+    12
+  ],
+  "iterations": 80,
+  "warmup": 5,
+  "repetitions": 3,
+  "seed": 42,
+  "batch_size": 32,
+  "features": 128,
+  "autograd_use": "no backward",
+  "fixed_control": "detach at sink; output payload may still grow; graph-associated excess must be removed",
+  "pilot_role": "positive_control",
+  "source_evidence": "Forum describes attached outputs stored in a list and recommends detachment.",
+  "classification_scope": "Runtime-confirmed in this small reproducer; original project not executed",
+  "python_version": "3.12.3",
+  "pytorch_version": "2.14.0+cu130",
+  "cuda_version": "13.0",
+  "device": "cuda",
+  "source_checked_on": "2026-10-12",
+  "potential_tensor_source_lines": [
+    11
+  ],
+  "related_sink_lines": [
+    12,
+    12
+  ]
 }

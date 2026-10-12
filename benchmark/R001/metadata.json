@@ -1,0 +1,36 @@
+{
+  "case_id": "R001",
+  "title": "Indexed diagnostic scores",
+  "source_url": "https://discuss.pytorch.org/t/memory-leak-when-appending-tensors-to-a-list/25937",
+  "adaptations": "Report supplies score shape and indexed storage; unspecified producer replaced with small Linear and softmax. Uses dict indices instead of preallocated array. No backward as reported.",
+  "mechanism": "diagnostic indexed storage",
+  "full_application_reproduced": false,
+  "classification": "CONFIRMED",
+  "persistent_roots": "indexed scores",
+  "source_hashes": {
+    "vulnerable": "0da21b637c7a87f3dd68cce94feaa49c889f1a7417139f419382ce76985d6433",
+    "fixed": "829d4b19ad6149e3f96990486f76b9fefad067b02740bfd11daeed290470c543"
+  },
+  "dimensions": {
+    "flow_scope": "local",
+    "sink": "outer collection",
+    "aliasing": "direct",
+    "lifetime": "application",
+    "accumulation": "grow",
+    "cleanup": "none",
+    "autograd_use": "no backward",
+    "control_flow": "loop"
+  },
+  "known_to_tool_before_study": "UNKNOWN",
+  "source_spans": {
+    "vulnerable": [
+      11,
+      12
+    ],
+    "fixed": [
+      11,
+      12
+    ]
+  },
+  "repair_diff": "fix.patch"
+}

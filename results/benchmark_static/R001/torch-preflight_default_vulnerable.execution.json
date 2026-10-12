@@ -1,0 +1,15 @@
+{
+  "command": [
+    "<tools-env>/bin/torch-preflight",
+    "check",
+    "--format",
+    "json",
+    "-j",
+    "1",
+    "benchmark/R001/vulnerable.py"
+  ],
+  "cwd": ".",
+  "returncode": 1,
+  "status": "OK",
+  "seconds": 0.18325640307739377
+}

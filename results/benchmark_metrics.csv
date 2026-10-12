@@ -1,0 +1,6 @@
+tool,configuration,confirmed_source_instances,detected_instances,source_instance_recall,mechanism_families,detected_mechanism_families,localization_accuracy,fixed_relevant_pairs,errors_or_review,independent_case_recall
+CodeQL,security-and-quality,5,0,0.0,4,0,UNDEFINED_NO_RELEVANT_FINDINGS,0,0,NOT_ESTIMABLE_OVERLAP_UNKNOWN
+Semgrep,python,5,0,0.0,4,0,UNDEFINED_NO_RELEVANT_FINDINGS,0,0,NOT_ESTIMABLE_OVERLAP_UNKNOWN
+TorchFix,all,5,0,0.0,4,0,UNDEFINED_NO_RELEVANT_FINDINGS,0,0,NOT_ESTIMABLE_OVERLAP_UNKNOWN
+torch-preflight,all,5,1,0.2,4,1,1.0,0,0,NOT_ESTIMABLE_OVERLAP_UNKNOWN
+torch-preflight,default,5,1,0.2,4,1,1.0,0,0,NOT_ESTIMABLE_OVERLAP_UNKNOWN

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "codeql",
+    "database",
+    "analyze",
+    "<tmp>/autograd-codeql-vlhz60ik/db",
+    "codeql/python-queries@1.8.10:codeql-suites/python-security-and-quality.qls",
+    "--format=sarif-latest",
+    "--output",
+    "results/pilot_static/codeql_fixed.sarif",
+    "--threads=2",
+    "--ram=4096"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 7.499354578088969
+}

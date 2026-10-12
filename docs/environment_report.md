@@ -1,16 +1,15 @@
-# Environment Report
+# Pilot environment
 
-- **Generated On:** 2026-09-20 14:17:08
-- **OS Platform:** Linux 6.14.0-37-generic (x86_64)
-- **Python Version:** 3.12.3 (CPython)
-- **PyTorch Version:** 2.14.0+cu132
-- **CUDA Available:** True
-- **CUDA Runtime Version:** 13.2
-- **Hardware Device:** NVIDIA GeForce RTX 5090
-- **Git Version:** git version 2.43.0
-- **Docker Version:** Docker version 29.8.1, build 4a63305
-- **CodeQL CLI Version:** 2.27.0
+- **generated_utc**: 2026-10-12T16:12:32.860546+00:00
+- **python**: 3.12.3
+- **os**: Linux-6.14.0-37-generic-x86_64-with-glibc2.39
+- **pytorch**: 2.14.0+cu130
+- **cuda_runtime**: 13.0
+- **cuda_available**: True
+- **gpu_driver_memory**: NVIDIA GeForce RTX 5090, 610.43.02, 32607 MiB
+- **git**: git version 2.43.0
+- **runtime_interpreter**: <usr>/bin/python3
 
-## Reproducibility Notes
-This environment report was generated to satisfy Module 0 of the study protocol.
-All baseline tool executions and benchmark measurements must reference these pinned dependencies.
+Runtime uses system Python with CUDA PyTorch. Static baselines use the adjacent `.venv` and CodeQL CLI. The authoritative baseline versions/configurations are in [tools_manifest.csv](../results/tools_manifest.csv); full Python baseline dependencies are in [requirements.lock](../baselines/requirements.lock). Runtime package inventory: [runtime_requirements.txt](../results/runtime_requirements.txt).
+
+Each runtime trace also has a JSON sidecar recording its seed, warm-up, iteration count, environment, and cleanup measurement. The historical September report is archived; it is not the environment for these October traces.
