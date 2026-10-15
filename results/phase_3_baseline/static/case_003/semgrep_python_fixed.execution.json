@@ -1,0 +1,18 @@
+{
+  "command": [
+    ".venv-tools/bin/semgrep",
+    "scan",
+    "--config",
+    "baselines/semgrep-python.yaml",
+    "--json",
+    "--metrics",
+    "off",
+    "--disable-version-check",
+    "--no-git-ignore",
+    "cases/case_003/fixed.py"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 0.9203936168923974
+}

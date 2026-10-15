@@ -1,0 +1,11 @@
+--- vulnerable.py
++++ fixed.py
+@@ -21 +21 @@
+-        self._total += value  # RETENTION_SINK -- BUG: running total retains the loss graph.
++        self._total += value
+@@ -72,0 +73,2 @@
++            if isinstance(v, torch.Tensor):
++                v = v.detach()  # FIX: drop the loss graph before meter accumulation.
+@@ -86 +88 @@
+-    # --- CASE LOGIC START: vulnerable ---
++    # --- CASE LOGIC START: fixed ---

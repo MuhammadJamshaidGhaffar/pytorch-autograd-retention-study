@@ -1,0 +1,14 @@
+Initializing database at <tmp>/autograd-codeql-1n825ba7/db.
+Running build command: []
+Running command in <tmp>/autograd-codeql-1n825ba7/src: [<home>/.local/opt/codeql/python/tools/autobuild.sh]
+Finalizing database at <tmp>/autograd-codeql-1n825ba7/db.
+Running pre-finalize script <home>/.local/opt/codeql/python/tools/pre-finalize.sh in <tmp>/autograd-codeql-1n825ba7/src.
+Running command in <tmp>/autograd-codeql-1n825ba7/src: [<home>/.local/opt/codeql/python/tools/pre-finalize.sh]
+Pre-finalize script <home>/.local/opt/codeql/python/tools/pre-finalize.sh completed in 414 ms.
+Running TRAP import for CodeQL database at <tmp>/autograd-codeql-1n825ba7/db...
+Importing TRAP files
+Merging relations
+Finished writing database (relations: 91.60 KiB; string pool: 2.08 MiB).
+TRAP import complete (319ms).
+Finished zipping source archive (7.47 KiB).
+Successfully created database at <tmp>/autograd-codeql-1n825ba7/db.

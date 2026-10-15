@@ -1,0 +1,34 @@
+{
+  "case_id": "C009",
+  "title": "Five-element sliding window",
+  "source_url": "https://discuss.pytorch.org/t/how-to-prevent-this-memory-leak/47581",
+  "adaptations": "Linear dimensions reduced from 150528\u21921000 to 128\u219232. Five-item window, zeros, requires_grad and deferred backward preserved. Implements author proposed list plus stack; validates terminal gradients, not arbitrary larger application semantics.",
+  "mechanism": "bounded window graph ancestry",
+  "full_application_reproduced": false,
+  "classification": "CONFIRMED",
+  "persistent_roots": "window of five outputs",
+  "source_hashes": {
+    "vulnerable": "fbe0609869d813442bab442346818d48d2d704b20a317dc840e48e79b08fb5a4",
+    "fixed": "cc5540f15b62d46e8251f6da0525f903a98da2177ed7aee07fb98a5a12f7f2fb"
+  },
+  "dimensions": {
+    "flow_scope": "local",
+    "sink": "outer collection",
+    "aliasing": "aliased",
+    "lifetime": "application",
+    "accumulation": "bounded-payload-growing-graph",
+    "cleanup": "explicit after run",
+    "autograd_use": "deferred",
+    "control_flow": "loop"
+  },
+  "known_to_tool_before_study": "UNKNOWN",
+  "source_spans": {
+    "vulnerable": [
+      12
+    ],
+    "fixed": [
+      12
+    ]
+  },
+  "repair_diff": "fix.patch"
+}

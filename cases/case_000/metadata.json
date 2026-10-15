@@ -10,13 +10,13 @@
   "classification": "CONFIRMED",
   "source_file": "vulnerable.py",
   "defective_line_span": [
-    12,
-    12
+    16,
+    16
   ],
   "repaired_file": "fixed.py",
   "repaired_line_span": [
-    12,
-    12
+    15,
+    15
   ],
   "iterations": 80,
   "warmup": 5,
@@ -35,10 +35,9 @@
   "device": "cuda",
   "source_checked_on": "2026-10-12",
   "potential_tensor_source_lines": [
-    11
+    15
   ],
   "related_sink_lines": [
-    12,
-    12
+    16
   ]
 }

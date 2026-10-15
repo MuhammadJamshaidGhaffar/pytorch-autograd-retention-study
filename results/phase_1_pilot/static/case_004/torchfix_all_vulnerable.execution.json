@@ -1,0 +1,14 @@
+{
+  "command": [
+    ".venv-tools/bin/torchfix",
+    "--select",
+    "ALL",
+    "-j",
+    "1",
+    "cases/case_004/vulnerable.py"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 0.29566472908481956
+}

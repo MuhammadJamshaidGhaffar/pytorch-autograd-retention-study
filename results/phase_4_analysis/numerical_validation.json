@@ -1,0 +1,65 @@
+[
+  {
+    "case_id": "C001",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C002",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C003",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C004",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C005",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C006",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C007",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C008",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  },
+  {
+    "case_id": "C009",
+    "status": "PASS",
+    "max_abs_error": 0.0,
+    "steps": 12,
+    "checks": "per-step outputs; final parameters; available gradients and terminal-window gradient where applicable"
+  }
+]

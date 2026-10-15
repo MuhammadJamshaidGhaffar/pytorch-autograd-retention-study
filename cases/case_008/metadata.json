@@ -1,0 +1,34 @@
+{
+  "case_id": "C008",
+  "title": "Repeated copy into registered buffer",
+  "source_url": "https://discuss.pytorch.org/t/copy-operations-get-repeated-in-autograd-computation-graph/122547",
+  "adaptations": "Forum minimal model dimensions, Adam and MSE preserved; graph visualization/printing omitted, repeats extended. Detach destination before copy preserves current-step parameter gradient path; DataParallel not tested.",
+  "mechanism": "in-place buffer history",
+  "full_application_reproduced": false,
+  "classification": "CONFIRMED",
+  "persistent_roots": "registered tensor_bidon",
+  "source_hashes": {
+    "vulnerable": "86b94e334ba5087f1d3ce60761e18da1e7d0352f8cd3fad3e0b2d9ba2317477d",
+    "fixed": "2cd89614253879bc4673e838b5f83f5caa1451b5943922482219343e62260717"
+  },
+  "dimensions": {
+    "flow_scope": "cross-method",
+    "sink": "framework state",
+    "aliasing": "aliased",
+    "lifetime": "object",
+    "accumulation": "bounded-payload-growing-graph",
+    "cleanup": "detach after run",
+    "autograd_use": "backward already run",
+    "control_flow": "loop"
+  },
+  "known_to_tool_before_study": "UNKNOWN",
+  "source_spans": {
+    "vulnerable": [
+      11
+    ],
+    "fixed": [
+      11
+    ]
+  },
+  "repair_diff": "fix.patch"
+}

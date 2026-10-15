@@ -1,2 +1,0 @@
-# Runtime pinned in results/runtime_environment.json; GPU build
-torch==2.14.0+cu130

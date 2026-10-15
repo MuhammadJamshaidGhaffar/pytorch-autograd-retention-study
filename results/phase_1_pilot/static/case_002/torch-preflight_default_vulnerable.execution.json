@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".venv-tools/bin/torch-preflight",
+    "check",
+    "--format",
+    "json",
+    "-j",
+    "1",
+    "cases/case_002/vulnerable.py"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 0.1760448208078742
+}

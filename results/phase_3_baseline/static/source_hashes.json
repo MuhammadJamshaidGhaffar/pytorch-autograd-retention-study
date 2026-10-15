@@ -1,0 +1,20 @@
+{
+  "cases/case_001/vulnerable.py": "22874c258d73a0f6ebe21de0e4fd116b0a6e63687bb184fb1b2e95d423e4c918",
+  "cases/case_001/fixed.py": "9ea317ac226000ca860c055fa101071b094303f8337c2f75b837f066eae9efb2",
+  "cases/case_002/vulnerable.py": "a4f452a33068b882246a83b530e36bbb915332ec8fc0eaec57706b404d419119",
+  "cases/case_002/fixed.py": "f129696dc79d949ae6271ffed048169a700a75a62f987e6e850073b396030a27",
+  "cases/case_003/vulnerable.py": "42f1bb826a51094876ad579e0819f86a35ca70208c4961cfb7742299a8f9b009",
+  "cases/case_003/fixed.py": "c5ff88c39a65afc70dfb31e358d075dc683c0b0d1f674bdff10bdfb518d095c5",
+  "cases/case_004/vulnerable.py": "263d1a3df31b5fddc5c0662718ee66b4be1bfe10c02258388ab74136b12397c6",
+  "cases/case_004/fixed.py": "2d76673f5c3ba504822c9645e79963edaf43061a7c60804373c9f1f33f6caf12",
+  "cases/case_005/vulnerable.py": "79feae1b81d28283ed88e63e03bcc7ff3d03bc19852885cc5a8556b62bd3a133",
+  "cases/case_005/fixed.py": "f1a5747f2bf866c2b6af541e70ae2166a278fc36a46dd6d127fa3d168c1ad2e5",
+  "cases/case_006/vulnerable.py": "8ba57f242a0e069c9af5a41b644a6b6d8ec2e9a130bb28167c58c546285167d7",
+  "cases/case_006/fixed.py": "1ba51e59a3404bf165a6820fd9b4f9db900e3b5a12d7f27b57af2a4674278236",
+  "cases/case_007/vulnerable.py": "d4e7c2f1f48b4a60c19acba282c74a2d57037ef1b86565842005f70e2f0b813a",
+  "cases/case_007/fixed.py": "f61758a51b0a42d37914e5323c0784633b671c907e4f947bc45244bccfabebbd",
+  "cases/case_008/vulnerable.py": "86b94e334ba5087f1d3ce60761e18da1e7d0352f8cd3fad3e0b2d9ba2317477d",
+  "cases/case_008/fixed.py": "2cd89614253879bc4673e838b5f83f5caa1451b5943922482219343e62260717",
+  "cases/case_009/vulnerable.py": "fbe0609869d813442bab442346818d48d2d704b20a317dc840e48e79b08fb5a4",
+  "cases/case_009/fixed.py": "cc5540f15b62d46e8251f6da0525f903a98da2177ed7aee07fb98a5a12f7f2fb"
+}

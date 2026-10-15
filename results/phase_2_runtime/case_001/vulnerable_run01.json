@@ -1,0 +1,21 @@
+{
+  "seed": 42,
+  "iterations": 120,
+  "warmup": 5,
+  "device": "cuda",
+  "torch": "2.14.0+cu130",
+  "python": "3.12.3",
+  "cuda": "13.0",
+  "gpu": "NVIDIA GeForce RTX 5090",
+  "elapsed_seconds": 1.4447337072342634,
+  "cleanup_graph_nodes": 0,
+  "released_by_cleanup_bytes": 11796480,
+  "codecarbon_version": "3.3.1",
+  "carbon_tracking_mode": "process",
+  "carbon_location_proxy": "Montreal, Quebec (assumed calculation setting; not a statement of host location)",
+  "carbon_measure_power_secs": 1,
+  "emissions_kg": 2.8833771565090105e-08,
+  "energy_consumed_kwh": 7.323132247489561e-06,
+  "carbon_intensity_gco2e_per_kwh": 1.2429721087414177e-07,
+  "codecarbon_csv": "results/phase_2_runtime/case_001/vulnerable_run01_codecarbon.csv"
+}

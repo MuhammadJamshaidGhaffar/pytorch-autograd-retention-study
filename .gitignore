@@ -62,24 +62,18 @@ cases/**/memory_trace.csv
 **/.pytest_cache/
 .coverage
 htmlcov/
-# Bulky, regenerable diagnostics stay local, including compressed snapshots.
+# Regenerable or machine-specific diagnostics and caches stay local.
 *.pickle
 *.pickle.*
 *.pkl
 *.pkl.*
-results/pilot_diagnostics/**/*_profiler.json
-results/pilot_diagnostics/**/*_profiler.json.*
-# Generated static-sensitivity source copies; generator and scan evidence are kept.
-results/benchmark_sensitivity/*.py
-# Removed historical archive must not be accidentally re-added.
-results/legacy_*/
 # Model/checkpoint artifacts are not benchmark source or measurements.
 *.pt
 *.pth
 *.ckpt
 *.safetensors
 
-# Local reproduction environments and benchmark scratch products
+# Local reproduction environments and generated temporary products
 .venv-*/
-benchmark/**/memory_trace.csv
-benchmark/**/test.sarif
+*.tmp
+*.log

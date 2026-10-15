@@ -10,13 +10,13 @@
   "classification": "CONFIRMED",
   "source_file": "vulnerable.py",
   "defective_line_span": [
-    9,
-    9
+    11,
+    11
   ],
   "repaired_file": "fixed.py",
   "repaired_line_span": [
-    9,
-    9
+    11,
+    11
   ],
   "iterations": 80,
   "warmup": 5,
@@ -35,10 +35,22 @@
   "device": "cuda",
   "source_checked_on": "2026-10-12",
   "potential_tensor_source_lines": [
-    15
+    17
   ],
   "related_sink_lines": [
-    9,
-    9
-  ]
+    11
+  ],
+  "title": "Helper output list",
+  "mechanism": "list append through helper",
+  "full_application_reproduced": false,
+  "dimensions": {
+    "flow_scope": "cross-function: caller output passed to helper",
+    "sink": "list element",
+    "aliasing": "direct tensor reference",
+    "lifetime": "caller-owned collection across loop iterations",
+    "accumulation": "unbounded list of graph-attached outputs",
+    "cleanup": "collection released after workload; no per-iteration cleanup",
+    "autograd_use": "no backward",
+    "control_flow": "loop"
+  }
 }

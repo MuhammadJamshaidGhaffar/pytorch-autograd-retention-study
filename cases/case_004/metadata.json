@@ -10,13 +10,13 @@
   "classification": "CONFIRMED",
   "source_file": "vulnerable.py",
   "defective_line_span": [
-    12,
-    12
+    14,
+    14
   ],
   "repaired_file": "fixed.py",
   "repaired_line_span": [
-    12,
-    12
+    14,
+    14
   ],
   "iterations": 80,
   "warmup": 5,
@@ -35,10 +35,22 @@
   "device": "cuda",
   "source_checked_on": "2026-10-12",
   "potential_tensor_source_lines": [
-    17
+    19
   ],
   "related_sink_lines": [
-    12,
-    12
-  ]
+    14
+  ],
+  "title": "Forward hook feature cache",
+  "mechanism": "hook output retained in feature list",
+  "full_application_reproduced": false,
+  "dimensions": {
+    "flow_scope": "callback: module output to registered hook",
+    "sink": "list element",
+    "aliasing": "direct reference to hook output",
+    "lifetime": "feature list persists after hook removal",
+    "accumulation": "unbounded list of graph-attached features",
+    "cleanup": "hook handle removed; cached features remain until state release",
+    "autograd_use": "no backward",
+    "control_flow": "loop with callback"
+  }
 }

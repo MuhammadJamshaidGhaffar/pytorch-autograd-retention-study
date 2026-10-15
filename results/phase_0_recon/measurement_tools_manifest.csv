@@ -1,0 +1,2 @@
+tool_name,version,role,source,configuration,verified_on
+CodeCarbon,3.3.1,Runtime energy and emissions measurement,https://pypi.org/project/codecarbon/3.3.1/,OfflineEmissionsTracker; process mode; 1-second power interval; Montreal-Quebec grid proxy (assumed),2026-10-15

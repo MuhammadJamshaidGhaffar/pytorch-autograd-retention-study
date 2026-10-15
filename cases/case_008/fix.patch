@@ -1,0 +1,9 @@
+--- vulnerable.py
++++ fixed.py
+@@ -11 +11,2 @@
+-        self.tensor_bidon.copy_(self.lin.weight)  # RETENTION_SINK -- BUG: buffer carries history into later forwards.
++        self.tensor_bidon = self.tensor_bidon.detach()  # FIX: clear prior history before the new copy.
++        self.tensor_bidon.copy_(self.lin.weight)
+@@ -22 +23 @@
+-    # --- CASE LOGIC START: vulnerable ---
++    # --- CASE LOGIC START: fixed ---

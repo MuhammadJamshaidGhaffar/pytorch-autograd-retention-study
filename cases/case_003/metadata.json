@@ -10,13 +10,13 @@
   "classification": "CONFIRMED",
   "source_file": "vulnerable.py",
   "defective_line_span": [
-    12,
-    12
+    17,
+    17
   ],
   "repaired_file": "fixed.py",
   "repaired_line_span": [
-    12,
-    12
+    16,
+    16
   ],
   "iterations": 80,
   "warmup": 5,
@@ -35,11 +35,22 @@
   "device": "cuda",
   "source_checked_on": "2026-10-12",
   "potential_tensor_source_lines": [
-    11
+    15
   ],
   "related_sink_lines": [
-    12,
-    12,
-    13
-  ]
+    17
+  ],
+  "title": "Nested output records",
+  "mechanism": "tensor retained through nested record",
+  "full_application_reproduced": false,
+  "dimensions": {
+    "flow_scope": "local function",
+    "sink": "list containing dictionary containing tensor",
+    "aliasing": "nested reference to graph-attached output",
+    "lifetime": "state-owned records across loop iterations",
+    "accumulation": "unbounded list of graph-attached records",
+    "cleanup": "collection released after workload; no per-iteration cleanup",
+    "autograd_use": "no backward",
+    "control_flow": "loop"
+  }
 }

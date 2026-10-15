@@ -10,13 +10,13 @@
   "classification": "CONFIRMED",
   "source_file": "vulnerable.py",
   "defective_line_span": [
-    13,
-    13
+    11,
+    11
   ],
   "repaired_file": "fixed.py",
   "repaired_line_span": [
-    13,
-    13
+    11,
+    11
   ],
   "iterations": 80,
   "warmup": 5,
@@ -35,10 +35,22 @@
   "device": "cuda",
   "source_checked_on": "2026-10-12",
   "potential_tensor_source_lines": [
-    19
+    21
   ],
   "related_sink_lines": [
-    13,
-    13
-  ]
+    11
+  ],
+  "title": "Running statistic graph chain",
+  "mechanism": "recursive running statistic",
+  "full_application_reproduced": false,
+  "dimensions": {
+    "flow_scope": "cross-method: model output passed to statistic update",
+    "sink": "object field updated recursively",
+    "aliasing": "new statistic references prior statistic graph",
+    "lifetime": "statistic object retained in run state",
+    "accumulation": "recursive graph chain grows per iteration",
+    "cleanup": "state released after workload; no per-iteration cleanup",
+    "autograd_use": "no backward",
+    "control_flow": "loop"
+  }
 }

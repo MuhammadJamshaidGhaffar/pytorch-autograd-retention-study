@@ -10,13 +10,13 @@
   "classification": "CONFIRMED",
   "source_file": "vulnerable.py",
   "defective_line_span": [
-    14,
-    14
+    12,
+    12
   ],
   "repaired_file": "fixed.py",
   "repaired_line_span": [
-    14,
-    14
+    12,
+    12
   ],
   "iterations": 80,
   "warmup": 5,
@@ -35,10 +35,22 @@
   "device": "cuda",
   "source_checked_on": "2026-10-12",
   "potential_tensor_source_lines": [
-    20
+    11
   ],
   "related_sink_lines": [
-    14,
-    14
-  ]
+    12
+  ],
+  "title": "Recurrent state graph chain",
+  "mechanism": "recurrent hidden state",
+  "full_application_reproduced": false,
+  "dimensions": {
+    "flow_scope": "cross-method: model output to recurrent state update",
+    "sink": "object field holding hidden state",
+    "aliasing": "new hidden state depends on prior hidden state",
+    "lifetime": "stream state persists across iterations",
+    "accumulation": "recursive graph chain grows per iteration",
+    "cleanup": "state released after workload; no per-iteration cleanup",
+    "autograd_use": "no backward",
+    "control_flow": "recurrent loop"
+  }
 }

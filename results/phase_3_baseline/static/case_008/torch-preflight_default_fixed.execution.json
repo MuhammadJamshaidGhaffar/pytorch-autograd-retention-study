@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".venv-tools/bin/torch-preflight",
+    "check",
+    "--format",
+    "json",
+    "-j",
+    "1",
+    "cases/case_008/fixed.py"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 0.19200699171051383
+}

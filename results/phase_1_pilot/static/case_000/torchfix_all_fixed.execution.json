@@ -1,0 +1,14 @@
+{
+  "command": [
+    ".venv-tools/bin/torchfix",
+    "--select",
+    "ALL",
+    "-j",
+    "1",
+    "cases/case_000/fixed.py"
+  ],
+  "cwd": ".",
+  "returncode": 0,
+  "status": "OK",
+  "seconds": 0.2843236639164388
+}

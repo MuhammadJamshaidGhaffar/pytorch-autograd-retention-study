@@ -1,0 +1,24 @@
+--- vulnerable.py
++++ fixed.py
+@@ -5 +5 @@
+-    return {'model': nn.Linear(128,32).to(device), 'window': torch.zeros(5,32,1,requires_grad=True,device=device), 'device': device}
++    return {'model': nn.Linear(128,32).to(device), 'items': [torch.zeros(32,1,requires_grad=True,device=device) for _ in range(5)], 'device': device}
+@@ -9 +9 @@
+-    # --- CASE LOGIC START: vulnerable ---
++    # --- CASE LOGIC START: fixed ---
+@@ -12 +12,2 @@
+-        context['window'] = torch.cat((new.unsqueeze(-1), context['window'][:-1]), dim=0)  # RETENTION_SINK -- BUG: links this window to the prior graph.
++        context['items'].insert(0, new.reshape(32,1))  # FIX: retain outputs as separate window items.
++        del context['items'][5:]  # FIX: cap graph retention to the five-step window.
+@@ -14 +15 @@
+-        snapshot = context['window'].detach().cpu()
++        snapshot = torch.stack(context['items']).detach().cpu()
+@@ -20 +21 @@
+-    return context['window']
++    return context['items']
+@@ -24 +25 @@
+-    return context['window'].sum()
++    return torch.stack(context['items']).sum()
+@@ -28 +29 @@
+-    context['window'] = context['window'].detach()
++    context['items'].clear()

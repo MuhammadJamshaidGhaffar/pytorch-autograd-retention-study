@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "summary": {
+    "files_checked": 1,
+    "errors": 1,
+    "warnings": 0,
+    "notes": 0,
+    "fixed": 0
+  },
+  "diagnostics": [
+    {
+      "code": "TG001",
+      "message": "`records.append(...)` keeps a tensor attached to the autograd graph and nothing backwards it, so every activation on the way to it stays in VRAM \u2014 one full graph per iteration, until the run OOMs.",
+      "severity": "error",
+      "category": "CRITICAL_OOM",
+      "path": "cases/case_003/vulnerable.py",
+      "line": 17,
+      "column": 24,
+      "end_line": 17,
+      "end_column": 30,
+      "hint": "Use `.item()` to keep just the scalar value, or `.detach()` to keep the tensor without its graph.",
+      "fixable": true,
+      "fix": "add .detach()"
+    }
+  ],
+  "failures": []
+}

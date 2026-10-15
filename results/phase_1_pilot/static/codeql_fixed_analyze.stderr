@@ -1,0 +1,708 @@
+Running queries.
+Resolving data extensions.
+Finished resolving data extensions.
+Loading data extensions.
+Finished loading data extensions.
+Not caching stages during query-loading, since max heap size is only 1800 MB.
+[1/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-352/CSRFProtectionDisabled.qlx.
+[2/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-312/CleartextLogging.qlx.
+[3/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-312/CleartextStorage.qlx.
+[4/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-079/ReflectedXss.qlx.
+[5/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-094/CodeInjection.qlx.
+[6/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-776/XmlBomb.qlx.
+[7/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/IncompleteUrlSubstringSanitization.qlx.
+[8/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-090/LdapInjection.qlx.
+[9/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/IncompleteHostnameRegExp.qlx.
+[10/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/CookieInjection.qlx.
+[11/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/OverlyLargeRange.qlx.
+[12/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-614/InsecureCookie.qlx.
+[13/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-918/FullServerSideRequestForgery.qlx.
+[14/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-215/FlaskDebug.qlx.
+[15/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-730/ReDoS.qlx.
+[16/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-730/RegexInjection.qlx.
+[17/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-730/PolynomialReDoS.qlx.
+[18/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-209/StackTraceExposure.qlx.
+[19/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-611/Xxe.qlx.
+[20/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-1004/NonHttpOnlyCookie.qlx.
+[21/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-502/UnsafeDeserialization.qlx.
+[22/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CVE-2018-1281/BindToAllInterfaces.qlx.
+[23/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-326/WeakCryptoKey.qlx.
+[24/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-295/MissingHostKeyValidation.qlx.
+[25/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-285/PamAuthorization.qlx.
+[26/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-1275/SameSiteNoneCookie.qlx.
+[27/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/BrokenCryptoAlgorithm.qlx.
+[28/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/InsecureDefaultProtocol.qlx.
+[29/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/WeakSensitiveDataHashing.qlx.
+[30/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/InsecureProtocol.qlx.
+[31/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-113/HeaderInjection.qlx.
+[32/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-074/TemplateInjection.qlx.
+[33/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-943/NoSqlInjection.qlx.
+[34/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-601/UrlRedirect.qlx.
+[35/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-116/BadTagFilter.qlx.
+[36/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-089/SqlInjection.qlx.
+[37/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-022/PathInjection.qlx.
+[38/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-078/CommandInjection.qlx.
+[39/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-377/InsecureTemporaryFile.qlx.
+[40/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-643/XpathInjection.qlx.
+[41/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UseofInput.qlx.
+[42/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-079/Jinja2WithoutEscaping.qlx.
+[43/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-732/WeakFilePermissions.qlx.
+[44/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-295/RequestWithoutValidation.qlx.
+[45/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-918/PartialServerSideRequestForgery.qlx.
+[46/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-022/TarSlip.qlx.
+[47/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-078/UnsafeShellCommandConstruction.qlx.
+[48/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Diagnostics/ExtractedFiles.qlx.
+[49/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Diagnostics/ExtractionWarnings.qlx.
+[50/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Summary/LinesOfUserCode.qlx.
+[51/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Summary/LinesOfCode.qlx.
+[52/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Testing/ImpreciseAssert.qlx.
+[53/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-117/LogInjection.qlx.
+[54/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/SideEffectInAssert.qlx.
+[55/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/BreakOrReturnInFinally.qlx.
+[56/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ConstantInConditional.qlx.
+[57/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ModificationOfLocals.qlx.
+[58/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UseOfExit.qlx.
+[59/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/StatementNoEffect.qlx.
+[60/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/IterableStringOrSequence.qlx.
+[61/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/NestedLoopsSameVariable.qlx.
+[62/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnnecessaryElseClause.qlx.
+[63/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnusedExceptionObject.qlx.
+[64/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/MismatchInMultipleAssignment.qlx.
+[65/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/AssertOnTuple.qlx.
+[66/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnnecessaryDelete.qlx.
+[67/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ReturnOrYieldOutsideFunction.qlx.
+[68/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/RedundantAssignment.qlx.
+[69/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/NonIteratorInForLoop.qlx.
+[70/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/TopLevelPrint.qlx.
+[71/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnreachableCode.qlx.
+[72/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnnecessaryPass.qlx.
+[73/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ShouldUseWithStatement.qlx.
+[74/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/NestedLoopsSameVariableWithReuse.qlx.
+[75/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CompareIdenticalValues.qlx.
+[76/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/ExplicitCallToDel.qlx.
+[77/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UseofApply.qlx.
+[78/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Comparisons/UselessComparisonTest.qlx.
+[79/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/WrongNumberArgumentsInCall.qlx.
+[80/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CallToSuperWrongClass.qlx.
+[81/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/ContainsNonContainer.qlx.
+[82/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/WrongNameForArgumentInCall.qlx.
+[83/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UnintentionalImplicitStringConcatenation.qlx.
+[84/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/TruncatedDivision.qlx.
+[85/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/UnusedArgumentIn3101Format.qlx.
+[86/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/WrongNameInArgumentsFor3101Format.qlx.
+[87/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/WrongNumberArgumentsFor3101Format.qlx.
+[88/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/MixedExplicitImplicitIn3101Format.qlx.
+[89/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/UnusedNamedArgumentIn3101Format.qlx.
+[90/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CompareIdenticalValuesMissingSelf.qlx.
+[91/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CompareConstants.qlx.
+[92/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/NonCallableCalled.qlx.
+[93/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/HashedButNoHash.qlx.
+[94/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UnnecessaryLambda.qlx.
+[95/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/MissingPartSpecialGroup.qlx.
+[96/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/UnmatchableDollar.qlx.
+[97/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/BackspaceEscape.qlx.
+[98/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/DuplicateCharacterInSet.qlx.
+[99/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/IncorrectComparisonUsingIs.qlx.
+[100/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/EqualsNone.qlx.
+[101/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/DuplicateKeyInDictionaryLiteral.qlx.
+[102/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UnsupportedFormatCharacter.qlx.
+[103/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/UnmatchableCaret.qlx.
+[104/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/WrongNumberArgumentsForFormat.qlx.
+[105/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/ExpectedMappingForFormatString.qlx.
+[106/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Numerics/Pythagorean.qlx.
+[107/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/GlobalAtModuleLevel.qlx.
+[108/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UninitializedLocal.qlx.
+[109/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UnusedModuleVariable.qlx.
+[110/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UndefinedPlaceHolder.qlx.
+[111/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/MultiplyDefined.qlx.
+[112/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UnusedLocalVariable.qlx.
+[113/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/LeakingListComprehension.qlx.
+[114/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/SuspiciousUnusedLoopIterationVariable.qlx.
+[115/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/LoopVariableCapture/LoopVariableCapture.qlx.
+[116/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Lexical/CommentedOutCode.qlx.
+[117/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Lexical/OldOctalLiteral.qlx.
+[118/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UndefinedExport.qlx.
+[119/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/WrongNumberArgumentsInClassInstantiation.qlx.
+[120/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/Comparisons/EqualsOrHash.qlx.
+[121/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/SuperInOldStyleClass.qlx.
+[122/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/Comparisons/IncompleteOrdering.qlx.
+[123/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/Comparisons/EqualsOrNotEquals.qlx.
+[124/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/InconsistentMRO.qlx.
+[125/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/MutatingDescriptor.qlx.
+[126/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/ConflictingAttributesInBaseClasses.qlx.
+[127/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/SubclassShadowing/SubclassShadowing.qlx.
+[128/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/OverwritingAttributeInSuperClass.qlx.
+[129/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/WrongNameForArgumentInClassInstantiation.qlx.
+[130/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/DefineEqualsWhenAddingAttributes.qlx.
+[131/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/PropertyInOldStyleClass.qlx.
+[132/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/MissingCallToDel.qlx.
+[133/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/SuperclassDelCalledMultipleTimes.qlx.
+[134/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/SuperclassInitCalledMultipleTimes.qlx.
+[135/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/MissingCallToInit.qlx.
+[136/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/SlotsInOldStyleClass.qlx.
+[137/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/SyntaxError.qlx.
+[138/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/InitCallsSubclass/InitCallsSubclassMethod.qlx.
+[139/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/ImportandImportFrom.qlx.
+[140/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/DeprecatedModule.qlx.
+[141/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/UnintentionalImport.qlx.
+[142/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/ModuleLevelCyclicImport.qlx.
+[143/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/EncodingError.qlx.
+[144/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/ModuleImportsItself.qlx.
+[145/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/UnusedImport.qlx.
+[146/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/MultipleImports.qlx.
+[147/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/CyclicImport.qlx.
+[148/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/IllegalExceptionHandlerType.qlx.
+[149/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/FromImportOfMutableAttribute.qlx.
+[150/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/NotImplementedIsNotAnException.qlx.
+[151/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/UnguardedNextInGenerator.qlx.
+[152/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/RaisingTuple.qlx.
+[153/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/IllegalRaise.qlx.
+[154/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/IncorrectExceptOrder.qlx.
+[155/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/CatchingBaseException.qlx.
+[156/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/EmptyExcept.qlx.
+[157/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Resources/FileNotAlwaysClosed.qlx.
+[158/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ExplicitReturnInInit.qlx.
+[159/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/SignatureSpecialMethods.qlx.
+[160/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/OverlyComplexDelMethod.qlx.
+[161/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ModificationOfParameterWithDefault.qlx.
+[162/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IncorrectRaiseInSpecialMethod.qlx.
+[163/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/SignatureOverriddenMethod.qlx.
+[164/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ConsistentReturns.qlx.
+[165/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IncorrectlyOverriddenMethod.qlx.
+[166/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IterReturnsNonIterator.qlx.
+[167/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/NonSelf.qlx.
+[168/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IncorrectlySpecifiedOverriddenMethod.qlx.
+[169/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/InitIsGenerator.qlx.
+[170/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/UseImplicitNoneReturnValue.qlx.
+[171/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/DeprecatedSliceMethod.qlx.
+[172/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/NonCls.qlx.
+[173/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ReturnConsistentTupleSizes.qlx.
+[174/174] Loaded <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IterReturnsNonSelf.qlx.
+Starting evaluation of codeql/python-queries/Classes/CallsToInitDel/MissingCallToDel.ql.
+Starting evaluation of codeql/python-queries/Classes/CallsToInitDel/MissingCallToInit.ql.
+Starting evaluation of codeql/python-queries/Classes/CallsToInitDel/SuperclassDelCalledMultipleTimes.ql.
+Starting evaluation of codeql/python-queries/Classes/CallsToInitDel/SuperclassInitCalledMultipleTimes.ql.
+Starting evaluation of codeql/python-queries/Classes/Comparisons/EqualsOrHash.ql.
+Starting evaluation of codeql/python-queries/Classes/Comparisons/EqualsOrNotEquals.ql.
+Starting evaluation of codeql/python-queries/Classes/Comparisons/IncompleteOrdering.ql.
+[1/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Classes/Comparisons/EqualsOrHash.bqrs.
+Starting evaluation of codeql/python-queries/Classes/ConflictingAttributesInBaseClasses.ql.
+[2/174 eval 723ms] Evaluation done; writing results to codeql/python-queries/Classes/CallsToInitDel/MissingCallToDel.bqrs.
+[3/174 eval 723ms] Evaluation done; writing results to codeql/python-queries/Classes/CallsToInitDel/MissingCallToInit.bqrs.
+[4/174 eval 395ms] Evaluation done; writing results to codeql/python-queries/Classes/Comparisons/IncompleteOrdering.bqrs.
+[5/174 eval 396ms] Evaluation done; writing results to codeql/python-queries/Classes/Comparisons/EqualsOrNotEquals.bqrs.
+[6/174 eval 755ms] Evaluation done; writing results to codeql/python-queries/Classes/CallsToInitDel/SuperclassDelCalledMultipleTimes.bqrs.
+[7/174 eval 433ms] Evaluation done; writing results to codeql/python-queries/Classes/CallsToInitDel/SuperclassInitCalledMultipleTimes.bqrs.
+Starting evaluation of codeql/python-queries/Classes/DefineEqualsWhenAddingAttributes.ql.
+Starting evaluation of codeql/python-queries/Classes/InconsistentMRO.ql.
+Starting evaluation of codeql/python-queries/Classes/InitCallsSubclass/InitCallsSubclassMethod.ql.
+Starting evaluation of codeql/python-queries/Classes/MutatingDescriptor.ql.
+[8/174 eval 128ms] Evaluation done; writing results to codeql/python-queries/Classes/InitCallsSubclass/InitCallsSubclassMethod.bqrs.
+Starting evaluation of codeql/python-queries/Classes/OverwritingAttributeInSuperClass.ql.
+Starting evaluation of codeql/python-queries/Classes/PropertyInOldStyleClass.ql.
+Starting evaluation of codeql/python-queries/Classes/SlotsInOldStyleClass.ql.
+[9/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Classes/PropertyInOldStyleClass.bqrs.
+Starting evaluation of codeql/python-queries/Classes/SubclassShadowing/SubclassShadowing.ql.
+Starting evaluation of codeql/python-queries/Classes/SuperInOldStyleClass.ql.
+[10/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Classes/SlotsInOldStyleClass.bqrs.
+Starting evaluation of codeql/python-queries/Classes/WrongNameForArgumentInClassInstantiation.ql.
+[11/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Classes/SubclassShadowing/SubclassShadowing.bqrs.
+Starting evaluation of codeql/python-queries/Classes/WrongNumberArgumentsInClassInstantiation.ql.
+Starting evaluation of codeql/python-queries/Diagnostics/ExtractedFiles.ql.
+Starting evaluation of codeql/python-queries/Diagnostics/ExtractionWarnings.ql.
+Starting evaluation of codeql/python-queries/Exceptions/CatchingBaseException.ql.
+Starting evaluation of codeql/python-queries/Exceptions/EmptyExcept.ql.
+[12/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Classes/SuperInOldStyleClass.bqrs.
+Starting evaluation of codeql/python-queries/Exceptions/IllegalExceptionHandlerType.ql.
+[13/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Exceptions/CatchingBaseException.bqrs.
+Starting evaluation of codeql/python-queries/Exceptions/IllegalRaise.ql.
+Starting evaluation of codeql/python-queries/Exceptions/IncorrectExceptOrder.ql.
+[14/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Diagnostics/ExtractedFiles.bqrs.
+Starting evaluation of codeql/python-queries/Exceptions/NotImplementedIsNotAnException.ql.
+[15/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Diagnostics/ExtractionWarnings.bqrs.
+Starting evaluation of codeql/python-queries/Exceptions/RaisingTuple.ql.
+[16/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Exceptions/IncorrectExceptOrder.bqrs.
+Starting evaluation of codeql/python-queries/Exceptions/UnguardedNextInGenerator.ql.
+[17/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Exceptions/EmptyExcept.bqrs.
+[18/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Exceptions/RaisingTuple.bqrs.
+[19/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Exceptions/NotImplementedIsNotAnException.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/CallToSuperWrongClass.ql.
+[20/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Exceptions/UnguardedNextInGenerator.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/CompareConstants.ql.
+[21/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Expressions/CallToSuperWrongClass.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/CompareIdenticalValues.ql.
+[22/174 eval 4ms] Evaluation done; writing results to codeql/python-queries/Expressions/CompareConstants.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/CompareIdenticalValuesMissingSelf.ql.
+Starting evaluation of codeql/python-queries/Expressions/Comparisons/UselessComparisonTest.ql.
+[23/174 eval 8ms] Evaluation done; writing results to codeql/python-queries/Expressions/CompareIdenticalValues.bqrs.
+[24/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Expressions/CompareIdenticalValuesMissingSelf.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/ContainsNonContainer.ql.
+[25/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Expressions/Comparisons/UselessComparisonTest.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/DuplicateKeyInDictionaryLiteral.ql.
+Starting evaluation of codeql/python-queries/Expressions/EqualsNone.ql.
+Starting evaluation of codeql/python-queries/Expressions/ExpectedMappingForFormatString.ql.
+[26/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Expressions/DuplicateKeyInDictionaryLiteral.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/ExplicitCallToDel.ql.
+Starting evaluation of codeql/python-queries/Expressions/Formatting/MixedExplicitImplicitIn3101Format.ql.
+[27/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Expressions/EqualsNone.bqrs.
+[28/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Expressions/ExplicitCallToDel.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/Formatting/UnusedArgumentIn3101Format.ql.
+Starting evaluation of codeql/python-queries/Expressions/Formatting/UnusedNamedArgumentIn3101Format.ql.
+Starting evaluation of codeql/python-queries/Expressions/Formatting/WrongNameInArgumentsFor3101Format.ql.
+Starting evaluation of codeql/python-queries/Expressions/Formatting/WrongNumberArgumentsFor3101Format.ql.
+Starting evaluation of codeql/python-queries/Expressions/HashedButNoHash.ql.
+Starting evaluation of codeql/python-queries/Expressions/IncorrectComparisonUsingIs.ql.
+Starting evaluation of codeql/python-queries/Expressions/NonCallableCalled.ql.
+Starting evaluation of codeql/python-queries/Expressions/Regex/BackspaceEscape.ql.
+[29/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Expressions/IncorrectComparisonUsingIs.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/Regex/DuplicateCharacterInSet.ql.
+Starting evaluation of codeql/python-queries/Expressions/Regex/MissingPartSpecialGroup.ql.
+[30/174 eval 15ms] Evaluation done; writing results to codeql/python-queries/Expressions/Regex/BackspaceEscape.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/Regex/UnmatchableCaret.ql.
+[31/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Expressions/Regex/DuplicateCharacterInSet.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/Regex/UnmatchableDollar.ql.
+[32/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Expressions/Regex/MissingPartSpecialGroup.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/TruncatedDivision.ql.
+Starting evaluation of codeql/python-queries/Expressions/UnintentionalImplicitStringConcatenation.ql.
+Starting evaluation of codeql/python-queries/Expressions/UnnecessaryLambda.ql.
+[33/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Expressions/Regex/UnmatchableCaret.bqrs.
+[34/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Expressions/Regex/UnmatchableDollar.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/UnsupportedFormatCharacter.ql.
+Starting evaluation of codeql/python-queries/Expressions/UseofApply.ql.
+Starting evaluation of codeql/python-queries/Expressions/UseofInput.ql.
+[35/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Expressions/UnintentionalImplicitStringConcatenation.bqrs.
+[36/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Expressions/UnsupportedFormatCharacter.bqrs.
+[37/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Expressions/UseofApply.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/WrongNameForArgumentInCall.ql.
+[38/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Expressions/UseofInput.bqrs.
+Starting evaluation of codeql/python-queries/Expressions/WrongNumberArgumentsForFormat.ql.
+Starting evaluation of codeql/python-queries/Expressions/WrongNumberArgumentsInCall.ql.
+Starting evaluation of codeql/python-queries/Functions/ConsistentReturns.ql.
+Starting evaluation of codeql/python-queries/Functions/DeprecatedSliceMethod.ql.
+Starting evaluation of codeql/python-queries/Functions/ExplicitReturnInInit.ql.
+Starting evaluation of codeql/python-queries/Functions/IncorrectRaiseInSpecialMethod.ql.
+Starting evaluation of codeql/python-queries/Functions/IncorrectlyOverriddenMethod.ql.
+[39/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Functions/DeprecatedSliceMethod.bqrs.
+[40/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Functions/IncorrectRaiseInSpecialMethod.bqrs.
+Starting evaluation of codeql/python-queries/Functions/IncorrectlySpecifiedOverriddenMethod.ql.
+Starting evaluation of codeql/python-queries/Functions/InitIsGenerator.ql.
+Starting evaluation of codeql/python-queries/Functions/IterReturnsNonIterator.ql.
+Starting evaluation of codeql/python-queries/Functions/IterReturnsNonSelf.ql.
+Starting evaluation of codeql/python-queries/Functions/ModificationOfParameterWithDefault.ql.
+[41/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Functions/InitIsGenerator.bqrs.
+[42/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Functions/IterReturnsNonSelf.bqrs.
+Starting evaluation of codeql/python-queries/Functions/NonCls.ql.
+[43/174 eval 19ms] Evaluation done; writing results to codeql/python-queries/Functions/ModificationOfParameterWithDefault.bqrs.
+Starting evaluation of codeql/python-queries/Functions/NonSelf.ql.
+[44/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Functions/NonCls.bqrs.
+[45/174 eval 20ms] Evaluation done; writing results to codeql/python-queries/Functions/NonSelf.bqrs.
+Starting evaluation of codeql/python-queries/Functions/OverlyComplexDelMethod.ql.
+Starting evaluation of codeql/python-queries/Functions/ReturnConsistentTupleSizes.ql.
+Starting evaluation of codeql/python-queries/Functions/SignatureOverriddenMethod.ql.
+Starting evaluation of codeql/python-queries/Functions/SignatureSpecialMethods.ql.
+[46/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Functions/ReturnConsistentTupleSizes.bqrs.
+[47/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Functions/SignatureOverriddenMethod.bqrs.
+Starting evaluation of codeql/python-queries/Functions/UseImplicitNoneReturnValue.ql.
+Starting evaluation of codeql/python-queries/Imports/CyclicImport.ql.
+[48/174 eval 13ms] Evaluation done; writing results to codeql/python-queries/Functions/SignatureSpecialMethods.bqrs.
+Starting evaluation of codeql/python-queries/Imports/DeprecatedModule.ql.
+Starting evaluation of codeql/python-queries/Imports/EncodingError.ql.
+Starting evaluation of codeql/python-queries/Imports/FromImportOfMutableAttribute.ql.
+Starting evaluation of codeql/python-queries/Imports/ImportandImportFrom.ql.
+[49/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Imports/DeprecatedModule.bqrs.
+Starting evaluation of codeql/python-queries/Imports/ModuleImportsItself.ql.
+[50/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Imports/EncodingError.bqrs.
+Starting evaluation of codeql/python-queries/Imports/ModuleLevelCyclicImport.ql.
+Starting evaluation of codeql/python-queries/Imports/MultipleImports.ql.
+[51/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Imports/ImportandImportFrom.bqrs.
+Starting evaluation of codeql/python-queries/Imports/SyntaxError.ql.
+Starting evaluation of codeql/python-queries/Imports/UnintentionalImport.ql.
+Starting evaluation of codeql/python-queries/Imports/UnusedImport.ql.
+[52/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Imports/MultipleImports.bqrs.
+[53/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Imports/SyntaxError.bqrs.
+Starting evaluation of codeql/python-queries/Lexical/CommentedOutCode.ql.
+Starting evaluation of codeql/python-queries/Lexical/OldOctalLiteral.ql.
+Starting evaluation of codeql/python-queries/Numerics/Pythagorean.ql.
+[54/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Lexical/CommentedOutCode.bqrs.
+[55/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Lexical/OldOctalLiteral.bqrs.
+Starting evaluation of codeql/python-queries/Resources/FileNotAlwaysClosed.ql.
+[56/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Numerics/Pythagorean.bqrs.
+Starting evaluation of codeql/python-queries/Security/CVE-2018-1281/BindToAllInterfaces.ql.
+[57/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Resources/FileNotAlwaysClosed.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-020/CookieInjection.ql.
+[58/174 eval 36ms] Evaluation done; writing results to codeql/python-queries/Security/CVE-2018-1281/BindToAllInterfaces.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-020/IncompleteHostnameRegExp.ql.
+[59/174 eval 22ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-020/CookieInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-020/IncompleteUrlSubstringSanitization.ql.
+[60/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-020/IncompleteHostnameRegExp.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-020/OverlyLargeRange.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-022/PathInjection.ql.
+[61/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-020/IncompleteUrlSubstringSanitization.bqrs.
+[62/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-020/OverlyLargeRange.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-022/TarSlip.ql.
+[63/174 eval 21ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-022/PathInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-074/TemplateInjection.ql.
+[64/174 eval 10ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-022/TarSlip.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-078/CommandInjection.ql.
+[65/174 eval 8ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-074/TemplateInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-078/UnsafeShellCommandConstruction.ql.
+[66/174 eval 14ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-078/CommandInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-079/Jinja2WithoutEscaping.ql.
+[67/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-078/UnsafeShellCommandConstruction.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-079/ReflectedXss.ql.
+[68/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-079/Jinja2WithoutEscaping.bqrs.
+[69/174 eval 285ms] Evaluation done; writing results to codeql/python-queries/Exceptions/IllegalExceptionHandlerType.bqrs.
+[70/174 eval 285ms] Evaluation done; writing results to codeql/python-queries/Exceptions/IllegalRaise.bqrs.
+[71/174 eval 258ms] Evaluation done; writing results to codeql/python-queries/Expressions/Formatting/UnusedArgumentIn3101Format.bqrs.
+[72/174 eval 260ms] Evaluation done; writing results to codeql/python-queries/Expressions/ExpectedMappingForFormatString.bqrs.
+[73/174 eval 258ms] Evaluation done; writing results to codeql/python-queries/Expressions/Formatting/WrongNumberArgumentsFor3101Format.bqrs.
+[74/174 eval 259ms] Evaluation done; writing results to codeql/python-queries/Expressions/Formatting/MixedExplicitImplicitIn3101Format.bqrs.
+[75/174 eval 266ms] Evaluation done; writing results to codeql/python-queries/Expressions/ContainsNonContainer.bqrs.
+[76/174 eval 259ms] Evaluation done; writing results to codeql/python-queries/Expressions/Formatting/UnusedNamedArgumentIn3101Format.bqrs.
+[77/174 eval 259ms] Evaluation done; writing results to codeql/python-queries/Expressions/Formatting/WrongNameInArgumentsFor3101Format.bqrs.
+[78/174 eval 240ms] Evaluation done; writing results to codeql/python-queries/Expressions/TruncatedDivision.bqrs.
+[79/174 eval 167ms] Evaluation done; writing results to codeql/python-queries/Imports/CyclicImport.bqrs.
+[80/174 eval 236ms] Evaluation done; writing results to codeql/python-queries/Expressions/WrongNumberArgumentsForFormat.bqrs.
+[81/174 eval 239ms] Evaluation done; writing results to codeql/python-queries/Expressions/UnnecessaryLambda.bqrs.
+[82/174 eval 162ms] Evaluation done; writing results to codeql/python-queries/Imports/UnintentionalImport.bqrs.
+[83/174 eval 166ms] Evaluation done; writing results to codeql/python-queries/Imports/ModuleLevelCyclicImport.bqrs.
+[84/174 eval 166ms] Evaluation done; writing results to codeql/python-queries/Imports/ModuleImportsItself.bqrs.
+[85/174 eval 162ms] Evaluation done; writing results to codeql/python-queries/Imports/UnusedImport.bqrs.
+[86/174 eval 242ms] Evaluation done; writing results to codeql/python-queries/Expressions/WrongNameForArgumentInCall.bqrs.
+[87/174 eval 431ms] Evaluation done; writing results to codeql/python-queries/Classes/DefineEqualsWhenAddingAttributes.bqrs.
+[88/174 eval 431ms] Evaluation done; writing results to codeql/python-queries/Classes/InconsistentMRO.bqrs.
+[89/174 eval 866ms] Evaluation done; writing results to codeql/python-queries/Classes/ConflictingAttributesInBaseClasses.bqrs.
+[90/174 eval 253ms] Evaluation done; writing results to codeql/python-queries/Functions/ConsistentReturns.bqrs.
+[91/174 eval 314ms] Evaluation done; writing results to codeql/python-queries/Classes/OverwritingAttributeInSuperClass.bqrs.
+[92/174 eval 316ms] Evaluation done; writing results to codeql/python-queries/Classes/MutatingDescriptor.bqrs.
+[93/174 eval 312ms] Evaluation done; writing results to codeql/python-queries/Classes/WrongNameForArgumentInClassInstantiation.bqrs.
+[94/174 eval 289ms] Evaluation done; writing results to codeql/python-queries/Expressions/HashedButNoHash.bqrs.
+[95/174 eval 319ms] Evaluation done; writing results to codeql/python-queries/Classes/WrongNumberArgumentsInClassInstantiation.bqrs.
+[96/174 eval 290ms] Evaluation done; writing results to codeql/python-queries/Expressions/NonCallableCalled.bqrs.
+[97/174 eval 262ms] Evaluation done; writing results to codeql/python-queries/Functions/ExplicitReturnInInit.bqrs.
+[98/174 eval 262ms] Evaluation done; writing results to codeql/python-queries/Functions/IncorrectlyOverriddenMethod.bqrs.
+[99/174 eval 274ms] Evaluation done; writing results to codeql/python-queries/Expressions/WrongNumberArgumentsInCall.bqrs.
+[100/174 eval 264ms] Evaluation done; writing results to codeql/python-queries/Functions/IncorrectlySpecifiedOverriddenMethod.bqrs.
+[101/174 eval 222ms] Evaluation done; writing results to codeql/python-queries/Functions/OverlyComplexDelMethod.bqrs.
+[102/174 eval 265ms] Evaluation done; writing results to codeql/python-queries/Functions/IterReturnsNonIterator.bqrs.
+[103/174 eval 213ms] Evaluation done; writing results to codeql/python-queries/Functions/UseImplicitNoneReturnValue.bqrs.
+[104/174 eval 81ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-079/ReflectedXss.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-089/SqlInjection.ql.
+[105/174 eval 217ms] Evaluation done; writing results to codeql/python-queries/Imports/FromImportOfMutableAttribute.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-090/LdapInjection.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-094/CodeInjection.ql.
+[106/174 eval 22ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-090/LdapInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-1004/NonHttpOnlyCookie.ql.
+[107/174 eval 27ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-089/SqlInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-113/HeaderInjection.ql.
+[108/174 eval 10ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-1004/NonHttpOnlyCookie.bqrs.
+[109/174 eval 15ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-094/CodeInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-116/BadTagFilter.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-117/LogInjection.ql.
+[110/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-116/BadTagFilter.bqrs.
+[111/174 eval 23ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-113/HeaderInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-1275/SameSiteNoneCookie.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-209/StackTraceExposure.ql.
+[112/174 eval 18ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-117/LogInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-215/FlaskDebug.ql.
+[113/174 eval 8ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-1275/SameSiteNoneCookie.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-285/PamAuthorization.ql.
+[114/174 eval 4ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-215/FlaskDebug.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-295/MissingHostKeyValidation.ql.
+[115/174 eval 6ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-285/PamAuthorization.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-295/RequestWithoutValidation.ql.
+[116/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-295/MissingHostKeyValidation.bqrs.
+[117/174 eval 19ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-209/StackTraceExposure.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-312/CleartextLogging.ql.
+[118/174 eval 10ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-295/RequestWithoutValidation.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-312/CleartextStorage.ql.
+[119/174 eval 19ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-312/CleartextLogging.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-326/WeakCryptoKey.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-327/BrokenCryptoAlgorithm.ql.
+[120/174 eval 11ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-312/CleartextStorage.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-327/InsecureDefaultProtocol.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-327/InsecureProtocol.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-327/WeakSensitiveDataHashing.ql.
+[121/174 eval 4ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-326/WeakCryptoKey.bqrs.
+[122/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/BrokenCryptoAlgorithm.bqrs.
+[123/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/InsecureDefaultProtocol.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-352/CSRFProtectionDisabled.ql.
+[124/174 eval 20ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/WeakSensitiveDataHashing.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-377/InsecureTemporaryFile.ql.
+[125/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-352/CSRFProtectionDisabled.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-502/UnsafeDeserialization.ql.
+[126/174 eval 26ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-327/InsecureProtocol.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-601/UrlRedirect.ql.
+[127/174 eval 8ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-377/InsecureTemporaryFile.bqrs.
+[128/174 eval 14ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-502/UnsafeDeserialization.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-611/Xxe.ql.
+[129/174 eval 19ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-601/UrlRedirect.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-614/InsecureCookie.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-643/XpathInjection.ql.
+[130/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-614/InsecureCookie.bqrs.
+[131/174 eval 6ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-643/XpathInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-730/PolynomialReDoS.ql.
+[132/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-730/PolynomialReDoS.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-730/ReDoS.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-730/RegexInjection.ql.
+[133/174 eval 23ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-611/Xxe.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-732/WeakFilePermissions.ql.
+Starting evaluation of codeql/python-queries/Security/CWE-776/XmlBomb.ql.
+[134/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-730/ReDoS.bqrs.
+[135/174 eval 8ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-730/RegexInjection.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-918/FullServerSideRequestForgery.ql.
+[136/174 eval 9ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-732/WeakFilePermissions.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-918/PartialServerSideRequestForgery.ql.
+[137/174 eval 15ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-776/XmlBomb.bqrs.
+[138/174 eval 10ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-918/PartialServerSideRequestForgery.bqrs.
+Starting evaluation of codeql/python-queries/Security/CWE-943/NoSqlInjection.ql.
+[139/174 eval 30ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-918/FullServerSideRequestForgery.bqrs.
+Starting evaluation of codeql/python-queries/Statements/AssertOnTuple.ql.
+Starting evaluation of codeql/python-queries/Statements/BreakOrReturnInFinally.ql.
+Starting evaluation of codeql/python-queries/Statements/ConstantInConditional.ql.
+[140/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Statements/AssertOnTuple.bqrs.
+[141/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/BreakOrReturnInFinally.bqrs.
+[142/174 eval 25ms] Evaluation done; writing results to codeql/python-queries/Security/CWE-943/NoSqlInjection.bqrs.
+Starting evaluation of codeql/python-queries/Statements/IterableStringOrSequence.ql.
+Starting evaluation of codeql/python-queries/Statements/MismatchInMultipleAssignment.ql.
+[143/174 eval 10ms] Evaluation done; writing results to codeql/python-queries/Statements/ConstantInConditional.bqrs.
+Starting evaluation of codeql/python-queries/Statements/ModificationOfLocals.ql.
+[144/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/MismatchInMultipleAssignment.bqrs.
+Starting evaluation of codeql/python-queries/Statements/NestedLoopsSameVariable.ql.
+Starting evaluation of codeql/python-queries/Statements/NestedLoopsSameVariableWithReuse.ql.
+Starting evaluation of codeql/python-queries/Statements/NonIteratorInForLoop.ql.
+[145/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/ModificationOfLocals.bqrs.
+[146/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Statements/IterableStringOrSequence.bqrs.
+Starting evaluation of codeql/python-queries/Statements/RedundantAssignment.ql.
+[147/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/NestedLoopsSameVariableWithReuse.bqrs.
+[148/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/NestedLoopsSameVariable.bqrs.
+Starting evaluation of codeql/python-queries/Statements/ReturnOrYieldOutsideFunction.ql.
+[149/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/NonIteratorInForLoop.bqrs.
+[150/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/ReturnOrYieldOutsideFunction.bqrs.
+Starting evaluation of codeql/python-queries/Statements/ShouldUseWithStatement.ql.
+Starting evaluation of codeql/python-queries/Statements/SideEffectInAssert.ql.
+Starting evaluation of codeql/python-queries/Statements/StatementNoEffect.ql.
+[151/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/ShouldUseWithStatement.bqrs.
+[152/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Statements/RedundantAssignment.bqrs.
+Starting evaluation of codeql/python-queries/Statements/TopLevelPrint.ql.
+[153/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Statements/StatementNoEffect.bqrs.
+Starting evaluation of codeql/python-queries/Statements/UnnecessaryDelete.ql.
+Starting evaluation of codeql/python-queries/Statements/UnnecessaryElseClause.ql.
+Starting evaluation of codeql/python-queries/Statements/UnnecessaryPass.ql.
+Starting evaluation of codeql/python-queries/Statements/UnreachableCode.ql.
+[154/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/TopLevelPrint.bqrs.
+[155/174 eval 4ms] Evaluation done; writing results to codeql/python-queries/Statements/SideEffectInAssert.bqrs.
+[156/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Statements/UnnecessaryElseClause.bqrs.
+[157/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Statements/UnnecessaryPass.bqrs.
+Starting evaluation of codeql/python-queries/Statements/UnusedExceptionObject.ql.
+Starting evaluation of codeql/python-queries/Statements/UseOfExit.ql.
+Starting evaluation of codeql/python-queries/Summary/LinesOfCode.ql.
+[158/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Statements/UnreachableCode.bqrs.
+Starting evaluation of codeql/python-queries/Summary/LinesOfUserCode.ql.
+[159/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Statements/UnusedExceptionObject.bqrs.
+[160/174 eval 4ms] Evaluation done; writing results to codeql/python-queries/Statements/UnnecessaryDelete.bqrs.
+[161/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Statements/UseOfExit.bqrs.
+[162/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Summary/LinesOfCode.bqrs.
+Starting evaluation of codeql/python-queries/Testing/ImpreciseAssert.ql.
+Starting evaluation of codeql/python-queries/Variables/GlobalAtModuleLevel.ql.
+Starting evaluation of codeql/python-queries/Variables/LeakingListComprehension.ql.
+Starting evaluation of codeql/python-queries/Variables/LoopVariableCapture/LoopVariableCapture.ql.
+[163/174 eval 4ms] Evaluation done; writing results to codeql/python-queries/Summary/LinesOfUserCode.bqrs.
+[164/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Variables/GlobalAtModuleLevel.bqrs.
+[165/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Testing/ImpreciseAssert.bqrs.
+Starting evaluation of codeql/python-queries/Variables/MultiplyDefined.ql.
+[166/174 eval 3ms] Evaluation done; writing results to codeql/python-queries/Variables/LeakingListComprehension.bqrs.
+Starting evaluation of codeql/python-queries/Variables/SuspiciousUnusedLoopIterationVariable.ql.
+[167/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Variables/MultiplyDefined.bqrs.
+Starting evaluation of codeql/python-queries/Variables/UndefinedExport.ql.
+[168/174 eval 10ms] Evaluation done; writing results to codeql/python-queries/Variables/LoopVariableCapture/LoopVariableCapture.bqrs.
+Starting evaluation of codeql/python-queries/Variables/UndefinedPlaceHolder.ql.
+[169/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Variables/UndefinedExport.bqrs.
+[170/174 eval 1ms] Evaluation done; writing results to codeql/python-queries/Variables/UndefinedPlaceHolder.bqrs.
+Starting evaluation of codeql/python-queries/Variables/UninitializedLocal.ql.
+[171/174 eval 8ms] Evaluation done; writing results to codeql/python-queries/Variables/SuspiciousUnusedLoopIterationVariable.bqrs.
+Starting evaluation of codeql/python-queries/Variables/UnusedLocalVariable.ql.
+Starting evaluation of codeql/python-queries/Variables/UnusedModuleVariable.ql.
+[172/174 eval 2ms] Evaluation done; writing results to codeql/python-queries/Variables/UnusedLocalVariable.bqrs.
+[173/174 eval 5ms] Evaluation done; writing results to codeql/python-queries/Variables/UnusedModuleVariable.bqrs.
+[174/174 eval 82ms] Evaluation done; writing results to codeql/python-queries/Variables/UninitializedLocal.bqrs.
+Shutting down query evaluator.
+Interpreting results.
+Resolving extensions
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-352/CSRFProtectionDisabled.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-312/CleartextLogging.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-312/CleartextStorage.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-079/ReflectedXss.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-094/CodeInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-776/XmlBomb.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-090/LdapInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/IncompleteUrlSubstringSanitization.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/CookieInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/IncompleteHostnameRegExp.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-020/OverlyLargeRange.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-918/FullServerSideRequestForgery.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-614/InsecureCookie.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-215/FlaskDebug.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-730/ReDoS.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-730/RegexInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-730/PolynomialReDoS.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-209/StackTraceExposure.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-611/Xxe.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-1004/NonHttpOnlyCookie.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-502/UnsafeDeserialization.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CVE-2018-1281/BindToAllInterfaces.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-326/WeakCryptoKey.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-285/PamAuthorization.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-295/MissingHostKeyValidation.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-1275/SameSiteNoneCookie.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/WeakSensitiveDataHashing.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/BrokenCryptoAlgorithm.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/InsecureDefaultProtocol.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-327/InsecureProtocol.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-113/HeaderInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-074/TemplateInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-943/NoSqlInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-601/UrlRedirect.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-116/BadTagFilter.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-089/SqlInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-022/PathInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-078/CommandInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-643/XpathInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-377/InsecureTemporaryFile.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UseofInput.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-079/Jinja2WithoutEscaping.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-918/PartialServerSideRequestForgery.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-732/WeakFilePermissions.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-295/RequestWithoutValidation.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-022/TarSlip.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-078/UnsafeShellCommandConstruction.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Security/CWE-117/LogInjection.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Diagnostics/ExtractedFiles.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Diagnostics/ExtractionWarnings.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Summary/LinesOfUserCode.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Summary/LinesOfCode.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Testing/ImpreciseAssert.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/SideEffectInAssert.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ModificationOfLocals.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/BreakOrReturnInFinally.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ConstantInConditional.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UseOfExit.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/IterableStringOrSequence.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/StatementNoEffect.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnusedExceptionObject.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/NestedLoopsSameVariable.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnnecessaryElseClause.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/MismatchInMultipleAssignment.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnnecessaryDelete.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/AssertOnTuple.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/RedundantAssignment.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ReturnOrYieldOutsideFunction.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/NonIteratorInForLoop.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/TopLevelPrint.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnreachableCode.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/ShouldUseWithStatement.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/UnnecessaryPass.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Statements/NestedLoopsSameVariableWithReuse.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UseofApply.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CompareIdenticalValues.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/ExplicitCallToDel.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Comparisons/UselessComparisonTest.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/WrongNumberArgumentsInCall.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CallToSuperWrongClass.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/WrongNameForArgumentInCall.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/ContainsNonContainer.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UnintentionalImplicitStringConcatenation.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/TruncatedDivision.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/UnusedArgumentIn3101Format.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/WrongNameInArgumentsFor3101Format.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/WrongNumberArgumentsFor3101Format.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/MixedExplicitImplicitIn3101Format.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Formatting/UnusedNamedArgumentIn3101Format.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/NonCallableCalled.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CompareIdenticalValuesMissingSelf.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/CompareConstants.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/HashedButNoHash.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UnnecessaryLambda.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/MissingPartSpecialGroup.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/UnmatchableDollar.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/BackspaceEscape.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/DuplicateCharacterInSet.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/Regex/UnmatchableCaret.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/IncorrectComparisonUsingIs.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/EqualsNone.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/DuplicateKeyInDictionaryLiteral.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/UnsupportedFormatCharacter.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/WrongNumberArgumentsForFormat.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Expressions/ExpectedMappingForFormatString.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Numerics/Pythagorean.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UninitializedLocal.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/GlobalAtModuleLevel.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UnusedModuleVariable.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UndefinedPlaceHolder.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/LoopVariableCapture/LoopVariableCapture.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/MultiplyDefined.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UnusedLocalVariable.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/LeakingListComprehension.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/SuspiciousUnusedLoopIterationVariable.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Variables/UndefinedExport.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Lexical/CommentedOutCode.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Lexical/OldOctalLiteral.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/WrongNumberArgumentsInClassInstantiation.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/SuperInOldStyleClass.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/Comparisons/EqualsOrHash.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/Comparisons/IncompleteOrdering.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/Comparisons/EqualsOrNotEquals.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/MutatingDescriptor.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/InconsistentMRO.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/ConflictingAttributesInBaseClasses.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/SubclassShadowing/SubclassShadowing.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/OverwritingAttributeInSuperClass.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/WrongNameForArgumentInClassInstantiation.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/PropertyInOldStyleClass.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/DefineEqualsWhenAddingAttributes.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/MissingCallToDel.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/SuperclassDelCalledMultipleTimes.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/SuperclassInitCalledMultipleTimes.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/CallsToInitDel/MissingCallToInit.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/SlotsInOldStyleClass.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Classes/InitCallsSubclass/InitCallsSubclassMethod.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/SyntaxError.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/DeprecatedModule.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/ImportandImportFrom.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/UnintentionalImport.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/ModuleLevelCyclicImport.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/UnusedImport.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/EncodingError.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/ModuleImportsItself.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/CyclicImport.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/MultipleImports.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Imports/FromImportOfMutableAttribute.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/IllegalExceptionHandlerType.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/NotImplementedIsNotAnException.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/UnguardedNextInGenerator.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/RaisingTuple.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/IllegalRaise.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/IncorrectExceptOrder.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/CatchingBaseException.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Exceptions/EmptyExcept.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Resources/FileNotAlwaysClosed.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ModificationOfParameterWithDefault.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ExplicitReturnInInit.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/SignatureSpecialMethods.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/OverlyComplexDelMethod.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IncorrectRaiseInSpecialMethod.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/SignatureOverriddenMethod.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ConsistentReturns.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IncorrectlyOverriddenMethod.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/NonSelf.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IterReturnsNonIterator.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IncorrectlySpecifiedOverriddenMethod.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/UseImplicitNoneReturnValue.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/InitIsGenerator.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/DeprecatedSliceMethod.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/NonCls.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/ReturnConsistentTupleSizes.ql...
+Interpreting <home>/.local/opt/codeql/qlpacks/codeql/python-queries/1.8.10/Functions/IterReturnsNonSelf.ql...
+Reading source archive <tmp>/autograd-codeql-1n825ba7/db/src.zip
+Exporting results to SARIF...
+Exported results to SARIF (45ms).

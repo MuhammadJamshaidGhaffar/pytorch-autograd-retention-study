@@ -10,13 +10,13 @@
   "classification": "CONFIRMED",
   "source_file": "vulnerable.py",
   "defective_line_span": [
-    13,
-    13
+    11,
+    11
   ],
   "repaired_file": "fixed.py",
   "repaired_line_span": [
-    13,
-    13
+    11,
+    11
   ],
   "iterations": 80,
   "warmup": 5,
@@ -36,10 +36,22 @@
   "source_checked_on": "2026-10-12",
   "fix_commit_url": "https://github.com/Megvii-BaseDetection/YOLOX/commit/d89453018099062ad0a15d6df2db9a3c65fd3a1a",
   "potential_tensor_source_lines": [
-    19
+    21
   ],
   "related_sink_lines": [
-    13,
-    13
-  ]
+    11
+  ],
+  "title": "Cross-method metric logger",
+  "mechanism": "metric tensor stored by logger method",
+  "full_application_reproduced": false,
+  "dimensions": {
+    "flow_scope": "cross-method: run loop to logger method",
+    "sink": "object field containing a list",
+    "aliasing": "direct metric tensor reference",
+    "lifetime": "logger object retained in run state",
+    "accumulation": "unbounded list of graph-attached metrics",
+    "cleanup": "logger released after workload; no per-iteration cleanup",
+    "autograd_use": "no backward",
+    "control_flow": "loop"
+  }
 }
