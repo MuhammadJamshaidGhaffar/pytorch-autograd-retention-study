@@ -36,6 +36,7 @@ Check numerical equivalence, then collect the Phase 2 runtime traces:
 ```bash
 .venv-runtime/bin/python scripts/phase_4_analysis/validate_numerics.py
 .venv-runtime/bin/python scripts/phase_2_runtime/measure.py
+.venv-tools/bin/python scripts/phase_2_runtime/plot.py
 ```
 
 Phase 3 runs static baselines on C001–C009. Phase 4 combines the evidence into summaries:
@@ -43,6 +44,7 @@ Phase 3 runs static baselines on C001–C009. Phase 4 combines the evidence into
 ```bash
 python3 scripts/phase_3_baseline/run_static.py --bin-dir .venv-tools/bin
 .venv-runtime/bin/python scripts/phase_4_analysis/summarize.py
+.venv-tools/bin/python scripts/phase_4_analysis/plot.py
 ```
 
 ## About the project
